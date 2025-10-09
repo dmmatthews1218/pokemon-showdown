@@ -6115,7 +6115,7 @@ helpip: {
 bookwyrm: {
     tier: "OU",
 },
-felectric: {
+felentric: {
     tier: "OU",
 },
 salamity: {

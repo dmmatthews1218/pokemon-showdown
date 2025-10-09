@@ -20108,7 +20108,7 @@ bookwyrm: {
     tags: [],
     eggGroups: ["Bug","Dragon"],
 },
-felectric: {
+felentric: {
     num: 9022,
     name: "Felectric",
     types: ["Normal","Electric"],
@@ -20127,7 +20127,7 @@ salamity: {
     types: ["Normal","Ghost"],
     genderRatio: { M: 0.5, F: 0.5 },
     baseStats: { hp: 60, atk: 120, def: 100, spa: 120, spd: 100, spe: 60 },
-    abilities: { 0: "Scrappy", H: "Huge Power" },
+    abilities: { 0: "Scrappy", },
     heightm: 2.0,
     weightkg: 128.3,
     color: "Gray",
@@ -20137,7 +20137,7 @@ salamity: {
 rayflector: {
     num: 9024,
     name: "Rayflector",
-    types: ["Water","Steel"],
+    types: ["Dark","Steel"],
     genderRatio: { M: 0.5, F: 0.5 },
     baseStats: { hp: 120, atk: 60, def: 90, spa: 80, spd: 90, spe: 40 },
     abilities: { 0: "Mirror Body", H: "Photosynthesis" },
@@ -20165,7 +20165,7 @@ slushmaid: {
     types: ["Water"],
     gender: "N",
     baseStats: {hp: 130, atk: 40, def: 90, spa: 60, spd: 90, spe: 40},
-    abilities: {0: "Hydration", 1: "Swift Swim", H: "Prism Armor"},
+    abilities: {0: "Hydration", 1: "Swift Swim", H: "Shell Armor"},
     weightkg: 136.0,
     color: "Blue",
     eggGroups: ["Undiscovered"],
