@@ -3344,6 +3344,22 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 136,
 		gen: 4,
 	},
+    tatsugiripearl: {
+		name: "Tatsugiri Pearl",
+		spritenum: 9001,
+		fling: {
+			basePower: 60,
+		},
+		onBasePowerPriority: 15,
+		onBasePower(basePower, user, target, move) {
+			if (user.baseSpecies.num === 9011 && (move.type === 'Water' || move.type === 'Dragon')) {
+				return this.chainModify([4915, 4096]);
+			}
+		},
+		itemUser: ["Giitchedgiri"],
+		num: 9001,
+		gen: 9,
+	},
 	luxuryball: {
 		name: "Luxury Ball",
 		spritenum: 266,

@@ -19953,7 +19953,7 @@ klefree: {
 klefine: {
     num: 9010,
     name: "Klefine",
-    types: ["Steel"],
+    types: ["Steel", "Dark"],
     genderRatio: { M: 0.5, F: 0.5 },
     baseStats: { hp: 110, atk: 90, def: 150, spa: 60, spd: 100, spe: 10 },
     abilities: { 0: "Lock in", H: "Prankster" },
@@ -19968,7 +19968,7 @@ giitchedgiri: {
     name: "Giitchedgiri",
     types: ["Water", "Dragon"],
     genderRatio: { M: 0.5, F: 0.5 },
-    baseStats: { hp: 95, atk: 135, def: 95, spa: 50, spd: 70, spe: 80 },
+    baseStats: { hp: 95, atk: 120, def: 95, spa: 50, spd: 70, spe: 80 },
     abilities: { 0: "Long Reach", 1: "Sharpness", H: "Draconic Rage" },
     heightm: 1.8,
     weightkg: 25.0,
@@ -20159,4 +20159,17 @@ walreinrelaya: {
     abilities: {0: "MicroScales", 1: "Poison Power"},
     eggGroups: ["Water 1", "Field"],
 },
+slushmaid: {
+    num: 9025, // temporary custom ID, adjust as needed
+    name: "Slushmaid",
+    types: ["Water"],
+    gender: "N",
+    baseStats: {hp: 130, atk: 40, def: 90, spa: 60, spd: 90, spe: 40},
+    abilities: {0: "Hydration", 1: "Swift Swim", H: "Prism Armor"},
+    weightkg: 136.0,
+    color: "Blue",
+    eggGroups: ["Undiscovered"],
+    heightm: 1.7,
+},
+
 };

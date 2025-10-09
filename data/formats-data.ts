@@ -6126,5 +6126,8 @@ rayflector: {
 },
 walreinrelaya: {
     tier: "OU",
+},
+slushmaid: {
+    tier: "OU",
 }
 };
