@@ -967,7 +967,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Axe Kick",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		flags: { kick: 1, contact: 1, protect: 1, mirror: 1, metronome: 1 },
 		hasCrashDamage: true,
 		onMoveFail(target, source, move) {
 			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('High Jump Kick'));
@@ -1485,7 +1485,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Blaze Kick",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		flags: { kick: 1, contact: 1, protect: 1, mirror: 1, metronome: 1 },
 		critRatio: 2,
 		secondary: {
 			chance: 10,
@@ -4075,7 +4075,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Double Kick",
 		pp: 30,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		flags: { kick: 1, contact: 1, protect: 1, mirror: 1, metronome: 1 },
 		multihit: 2,
 		secondary: null,
 		target: "normal",
@@ -9226,7 +9226,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "High Jump Kick",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, gravity: 1, metronome: 1 },
+		flags: { kick: 1, contact: 1, protect: 1, mirror: 1, gravity: 1, metronome: 1 },
 		hasCrashDamage: true,
 		onMoveFail(target, source, move) {
 			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('High Jump Kick'));
@@ -10204,7 +10204,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Jump Kick",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, gravity: 1, metronome: 1 },
+		flags: { kick: 1, contact: 1, protect: 1, mirror: 1, gravity: 1, metronome: 1 },
 		hasCrashDamage: true,
 		onMoveFail(target, source, move) {
 			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('Jump Kick'));
@@ -10856,7 +10856,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Low Kick",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		flags: { kick: 1, contact: 1, protect: 1, mirror: 1, metronome: 1 },
 		onTryHit(target, pokemon, move) {
 			if (target.volatiles['dynamax']) {
 				this.add('-fail', pokemon, 'Dynamax');
@@ -12016,7 +12016,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Mega Kick",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		flags: { kick: 1, contact: 1, protect: 1, mirror: 1, metronome: 1 },
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -15908,7 +15908,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Rolling Kick",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		flags: { kick: 1, contact: 1, protect: 1, mirror: 1, metronome: 1 },
 		secondary: {
 			chance: 30,
 			volatileStatus: 'flinch',
@@ -20281,7 +20281,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Thunderous Kick",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: { kick: 1, contact: 1, protect: 1, mirror: 1 },
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -20804,7 +20804,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Triple Kick",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		flags: { kick: 1, contact: 1, protect: 1, mirror: 1, metronome: 1 },
 		multihit: 3,
 		multiaccuracy: true,
 		secondary: null,
@@ -20822,7 +20822,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Trop Kick",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		flags: { kick: 1, contact: 1, protect: 1, mirror: 1, metronome: 1 },
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -22111,8 +22111,81 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		contestType: "Beautiful",
 	},
     // START OF NCSU CUSTOM MOVES
-    strengthofthewolf: {
+    roundhousekick: {
         num: 9000,
+		accuracy: 90,
+		basePower: 90,
+		category: "Physical",
+		name: "Roundhouse Kick",
+		pp: 10,
+		priority: 0,
+		flags: { kick: 1, contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		target: "allAdjacentFoes",
+		type: "Fighting",
+		contestType: "Cool",
+    },
+    crobhammer: {
+        num: 9001,
+		accuracy: 90,
+		basePower: 110,
+		category: "Physical",
+		name: "Crobhammer",
+		pp: 5,
+		priority: 0,
+        recoil: [33, 100],
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		target: "allAdjacentFoes",
+		type: "Water",
+		contestType: "Cool",
+    },
+    aerialuppercut: {
+        num: 9002,
+		accuracy: 100,
+		basePower: 70,
+		category: "Physical",
+		name: "Aerial Uppercut",
+		pp: 10,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+        onEffectiveness(typeMod, target, type) {
+			if (type === 'Flying') return 1;
+		},
+        target: "any",
+		type: "Fighting",
+		contestType: "Cool",
+    },
+    flowingflurry: {
+        num: 9003,
+		accuracy: 100,
+		basePower: 25,
+		category: "Physical",
+		name: "Flowing Flurry",
+		pp: 15,
+		priority: 1,
+		flags: { kick: 1, contact: 1, protect: 1, mirror: 1, metronome: 1 },
+        multihit: 2,
+        target: "any",
+		type: "Water",
+		contestType: "Cool",
+    },
+    wavekick: {
+        num: 9004,
+		accuracy: 100,
+		basePower: 70,
+		category: "Physical",
+		name: "Wave Kick",
+		pp: 10,
+        priority: 0,
+        critRatio: 2,
+		flags: { kick: 1, protect: 1, mirror: 1, metronome: 1 },
+        target: "any",
+		type: "Water",
+		contestType: "Cool",
+    },
+
+    // PACK ATTACKS
+    strengthofthewolf: {
+        num: 10000,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -22146,7 +22219,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		contestType: "Beautiful",
     },
     powerofthepack: {
-		num: 9001,
+		num: 10001,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",

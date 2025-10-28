@@ -63,6 +63,8 @@ interface MoveFlags {
 	snatch?: 1; // Can be stolen from the original user and instead used by another Pokemon using Snatch.
 	sound?: 1; // Has no effect on Pokemon with the Ability Soundproof.
 	wind?: 1; // Activates the Wind Power and Wind Rider Abilities.
+    // CUSTOM POKEMON CLUB EFFECTS
+    kick?: 1; // Power is multiplied by 1.2 when used by a Pokemon with the Ability Kick Boxer
 }
 
 export interface HitEffect {

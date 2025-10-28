@@ -7639,4 +7639,27 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 			desc: "The user is replaced with another Pokemon in its party. The selected Pokemon has the user's stat stage changes transferred to it, as well as the effects of confusion, Curse, Defense Curl, Focus Energy, Foresight, Leech Seed, Lock-On (Mind Reader), Minimize, Mist, Perish Song, the trapper or trapped effects of Mean Look (Spider Web), and a substitute with its remaining HP.",
 		},
     },
+    roundhousekick: {
+        name: "Roundhouse Kick",
+        shortDesc: "No additional effect. Hits foe(s).",
+    },
+    crobhammer: {
+        name: "Crobhammer",
+        shortDesc: "Has 33% recoil. Hits foe(s).",
+        desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP. Hits foe(s).",
+    },
+    aerialuppercut: {
+        name: "Aerial Uppercut",
+        shortDesc: "Super effective on Flying.",
+        desc: "This move's type effectiveness against Flying is changed to be super effective no matter what this move's type is.",
+    },
+    flowingflurry: {
+        name: "Flowing Flurry",
+        shortDesc: "Usually goes first. Hits 2 times in one turn.",
+		desc: "Hits twice. If one of the hits breaks the target's substitute, it will take damage for the remaining hits.",
+    },
+    wavekick: {
+        name: "Wave Kick",
+        shortDesc: "Does not make contact. High critical hit ratio."
+    }
 };
