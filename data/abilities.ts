@@ -5641,4 +5641,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 9001,
 	},
+    kickboxer: {
+        onBasePowerPriority: 23,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['kick']) {
+				this.debug('Kick Boxer boost');
+				return this.chainModify([4915, 4096]);
+			}
+		},
+		flags: {},
+		name: "Kick Boxer",
+		rating: 3,
+		num: 9002,
+    },
 };

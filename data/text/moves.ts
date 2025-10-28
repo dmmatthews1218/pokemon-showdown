@@ -7641,7 +7641,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
     },
     roundhousekick: {
         name: "Roundhouse Kick",
-        shortDesc: "No additional effect. Hits foe(s).",
+        shortDesc: "Hits foe(s).",
     },
     crobhammer: {
         name: "Crobhammer",

@@ -100291,6 +100291,11 @@ pyroble: {
 },
 crob: {
   learnset: {
+    roundhousekick: ["9L1"],
+    crobhammer: ["9L1"],
+    aerialuppercut: ["9L1"],
+    flowingflurry: ["9L1"],
+    wavekick: ["9L1"],
     visegrip: ["9L1"],
     aquajet: ["9L1"],
     bubble: ["9L1"],

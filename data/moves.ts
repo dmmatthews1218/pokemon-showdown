@@ -18715,7 +18715,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Stomp",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, nonsky: 1, metronome: 1 },
+		flags: { kick: 1, contact: 1, protect: 1, mirror: 1, nonsky: 1, metronome: 1 },
 		secondary: {
 			chance: 30,
 			volatileStatus: 'flinch',
@@ -18739,7 +18739,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Stomping Tantrum",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		flags: { kick: 1, contact: 1, protect: 1, mirror: 1, metronome: 1 },
 		secondary: null,
 		target: "normal",
 		type: "Ground",

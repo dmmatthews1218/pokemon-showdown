@@ -2281,8 +2281,15 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 
 		activate: "  [POKEMON] extends [MOVE] by 2 turns!",
 	},
+
+    // Start of NCSU Pokemon Club Abilities
     fortunestotem: {
         name: "Fortune's Totem",
         shortDesc: "This Pokemon and its allies' moves have their accuracy multiplied by 1.1.",
+    },
+    kickboxer: {
+        name: "Kick Boxer",
+        desc: "This Pokemon's kicking, stomping, and leg attacks have their power multiplied by 1.2.",
+		shortDesc: "This Pokemon's kicking/stomping/leg attacks have 1.2x power.",
     }
 };
