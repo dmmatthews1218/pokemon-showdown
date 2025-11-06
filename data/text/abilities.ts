@@ -2310,7 +2310,7 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
     energized: {
         name: "Energized",
         desc: "This Pokemon's offensive stat is 1.3X while using an Electric-type attack. This Pokemon cannot be put to sleep. Gaining this Ability while sleeping cures it.",
-		shortDesc: "This Pokemon's Water power is 1.3x; it can't be slept.",
+		shortDesc: "This Pokemon's Electric power is 1.3x; it can't be slept.",
     },
     microscales: {
         name: "Microscales",
@@ -2322,5 +2322,5 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
         desc: "This Pokemon is immune to Poison-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Poison-type move.",
 		shortDesc: "This Pokemon heals 1/4 of its max HP when hit by Poison moves; Poison immunity.",
     },
-    
+
 };
