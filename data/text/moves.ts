@@ -7644,7 +7644,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
         shortDesc: "Hits foe(s).",
     },
     crobhammer: {
-        name: "Crobhammer",
+        name: "Crob-Hammer",
         shortDesc: "Has 33% recoil. Hits foe(s).",
         desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP. Hits foe(s).",
     },
@@ -7677,4 +7677,71 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
         desc: "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 1/3 recoil.",
     },
+    melodicmemory: {
+        name: "Melodic Memory",
+        desc: "Lowers the target's Defense, Special Defense, and Speed by 1 stage.",
+		shortDesc: "Lowers the target's Defense/Special Defense/Speed by 1.",
+    },
+    quillrain: {
+        name: "Quill Rain",
+        desc: "Fails unless the user is a Fire type. If this move is successful and the user is not Terastallized, the user's Fire type becomes typeless as long as it remains active. Has a 30% chance to burn the target.",
+		shortDesc: "30% chance to burn the foe(s).",
+        typeChange: "  [POKEMON] burned itself out!",
+    },
+    burnoutblast: {
+        name: "Burnout Blast",
+        desc: "The user faints after using this move, even if this move fails for having no target. This move is prevented from executing if any active Pokemon has the Damp Ability.",
+		shortDesc: "Hits adjacent Pokemon. The user faints.",
+    },
+    sneakytactics: {
+        name: "Sneaky Tactics",
+        desc: "This move and its effects ignore the Abilities of other Pokemon. Burns the target. The user swaps its held item with the target's held item. Fails if either the user or the target is holding a Mail or Z-Crystal, if neither is holding an item, if the user is trying to give or take a Mega Stone to or from the species that can Mega Evolve with it, or if the user is trying to give or take a Blue Orb, a Red Orb, a Griseous Orb, a Plate, a Drive, or a Memory to or from a Kyogre, a Groudon, a Giratina, an Arceus, a Genesect, or a Silvally, respectively. ",
+		shortDesc: "Ignores the Abilities of other Pokemon. Burns the target. User switches its held item with the target's.",
+    },
+    honk: {
+        name: "Honk!",
+        desc: "Has a 100% chance to make the target flinch. Fails unless it is the user's first turn on the field.",
+		shortDesc: "Hits first. First turn out only. 100% flinch chance.",
+    },
+    patchwork: {
+        name: "Patchwork",
+        desc: "The user restores 3/4 of its maximum HP, rounded half up. If this move is successful, the user must recharge on the following turn and cannot select a move.",
+		shortDesc: "Heals the user by 75% of its max HP. User cannot move next turn.",
+    },
+    micdrop: {
+        name: "Mic Drop",
+        desc: "For 2 turns, the target cannot use sound-based moves. If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
+		shortDesc: "For 2 turns, the target cannot use sound moves. User switches out after damaging the target.",
+    },
+    mukshluck: {
+        name: "Muk Shluck",
+        desc: "Has a 20% chance to poison the target. The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
+		shortDesc: "20% burn. Recovers 50% dmg dealt.",
+    },
+    corrosivebreath: {
+        name: "Corrosive Breath",
+        desc: "Has a 100% chance to poison the target.",
+        shortDesc: "Poisons foe(s).",
+    },
+    papercut: {
+        name: "Paper Cut",
+        desc: "This move is always a critical hit unless the target is under the effect of Lucky Chant or has the Battle Armor or Shell Armor Abilities.",
+		shortDesc: "Always results in a critical hit.",
+    },
+    staticshock: {
+        name: "Static Shock",
+        desc: "Has a 30% chance to paralyze the target. This attack charges on the first turn and executes on the second. If the user is holding a Power Herb, the move completes in one turn.",
+		shortDesc: "Charges, then hits turn 2. 30% chance to paralyze the target.",
+    },
+    souleater: {
+        name: "Soul Eater",
+        desc: "The user recovers 3/4 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
+		shortDesc: "User recovers 75% of the damage dealt.",
+    },
+    scornedsoul: {
+        name: "Scorned Soul",
+        desc: "This move can hit Normal-type Pokemon. The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk and the user is asleep, the move is used for one turn and does not confuse the user.",
+		shortDesc: "Neutral against Normal-types. Lasts 2-3 turns. Confuses the user afterwards.",
+    },
+    
 };

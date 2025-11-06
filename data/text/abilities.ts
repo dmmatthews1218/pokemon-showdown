@@ -299,8 +299,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	damp: {
 		name: "Damp",
-		desc: "While this Pokemon is active, Explosion, Mind Blown, Misty Explosion, Self-Destruct, and the Aftermath Ability are prevented from having an effect.",
-		shortDesc: "Prevents Explosion/Mind Blown/Misty Explosion/Self-Destruct/Aftermath while active.",
+		desc: "While this Pokemon is active, Burnout Blast, Explosion, Mind Blown, Misty Explosion, Self-Destruct, and the Aftermath Ability are prevented from having an effect.",
+		shortDesc: "Prevents Burnout Blast/Explosion/Mind Blown/Misty Explosion/Self-Destruct/Aftermath while active.",
 		gen7: {
 			desc: "While this Pokemon is active, Explosion, Mind Blown, Self-Destruct, and the Aftermath Ability are prevented from having an effect.",
 			shortDesc: "Prevents Explosion/Mind Blown/Self-Destruct/Aftermath while this Pokemon is active.",
@@ -2311,5 +2311,16 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
         name: "Energized",
         desc: "This Pokemon's offensive stat is 1.3X while using an Electric-type attack. This Pokemon cannot be put to sleep. Gaining this Ability while sleeping cures it.",
 		shortDesc: "This Pokemon's Water power is 1.3x; it can't be slept.",
-    }
+    },
+    microscales: {
+        name: "Microscales",
+        desc: "If a Pokemon uses a Normal- or Fighting-type attack against this Pokemon, that Pokemon's offensive stat is halved when calculating the damage to this Pokemon.",
+		shortDesc: "Normal/Fighting damage against this Pokemon is dealt with 1/2 offensive stat.",
+    },
+    poisonpower: {
+        name: "Poison Power",
+        desc: "This Pokemon is immune to Poison-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Poison-type move.",
+		shortDesc: "This Pokemon heals 1/4 of its max HP when hit by Poison moves; Poison immunity.",
+    },
+    
 };

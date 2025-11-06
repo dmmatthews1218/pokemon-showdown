@@ -100743,7 +100743,6 @@ planoteria: {
     lifedew: ["9L1"],
     lightscreen: ["9L1"],
     lovelykiss: ["9L1"],
-    luminakiss: ["9L1"],
     magiccoat: ["9L1"],
     magicpowder: ["9L1"],
     miracleeye: ["9L1"],
@@ -101142,6 +101141,7 @@ polteageistrelaya: {
 },
 requorvid: {
   learnset: {
+    melodicmemory: ["9L1"],
     willowisp: ["9L1"],
     hypervoice: ["9L1"],
     chatter: ["9L1"],
@@ -101333,6 +101333,8 @@ photurix: {
 },
 porcupyre: {
   learnset: {
+    quillrain: ["9L1"],
+    burnoutblast: ["9L1"],
     protect: ["9L1"],
     willowisp: ["9L1"],
     defensecurl: ["9L1"],
@@ -101486,6 +101488,7 @@ slushmaid: {
 },
 snatchet: {
   learnset: {
+    sneakytactics: ["9L1"],
     protect: ["9L1"],
     falseswipe: ["9L1"],
     rest: ["9L1"],
@@ -101548,6 +101551,7 @@ snatchet: {
 },
 honq: {
   learnset: {
+    honk: ["9L1"],
     teeterdance: ["9L1"],
     spotlight: ["9L1"],
     protect: ["9L1"],
@@ -101631,6 +101635,7 @@ honq: {
 },
 pilushi: {
   learnset: {
+    patchwork: ["9L1"],
     protect: ["9L1"],
     falseswipe: ["9L1"],
     rest: ["9L1"],
@@ -101738,6 +101743,7 @@ pilushi: {
 },
 kittune: {
   learnset: {
+    micdrop: ["9L1"],
     boomburst: ["9L1"],
     alluringvoice: ["9L1"],
     allyswitch: ["9L1"],
@@ -101769,7 +101775,7 @@ kittune: {
     electroball: ["9L1"],
     encore: ["9L1"],
     flash: ["9L1"],
-    flashcanon: ["9L1"],
+    flashcannon: ["9L1"],
     helpinghand: ["9L1"],
     hex: ["9L1"],
     holdhands: ["9L1"],
@@ -101816,6 +101822,7 @@ kittune: {
 },
 nikosluj: {
   learnset: {
+    mukshluck: ["9L1"],
     shellsmash: ["9L1"],
     acid: ["9L1"],
     acidarmor: ["9L1"],
@@ -101957,7 +101964,7 @@ nunadol: {
     explosion: ["9L1"],
     selfdestruct: ["9L1"],
     flail: ["9L1"],
-    flashcanon: ["9L1"],
+    flashcannon: ["9L1"],
     flatter: ["9L1"],
     fling: ["9L1"],
     trickroom: ["9L1"],
@@ -102120,6 +102127,7 @@ helpip: {
 },
 bookwyrm: {
   learnset: {
+    papercut: ["9L1"],
     protect: ["9L1"],
     dragonrush: ["9L1"],
     leechlife: ["9L1"],
@@ -102139,7 +102147,6 @@ bookwyrm: {
     beatup: ["9L1"],
     belch: ["9L1"],
     bind: ["9L1"],
-    sleeppowder: ["9L1"],
     bounce: ["9L1"],
     breakingswipe: ["9L1"],
     brutalswing: ["9L1"],
@@ -102234,6 +102241,7 @@ bookwyrm: {
 },
 felentric: {
   learnset: {
+    staticshock: ["9L1"],
     nuzzle: ["9L1"],
     acidspray: ["9L1"],
     afteryou: ["9L1"],
@@ -102360,6 +102368,8 @@ felentric: {
 },
 salamity: {
   learnset: {
+    souleater: ["9L1"],
+    scornedsoul: ["9L1"],
     acidspray: ["9L1"],
     nastyplot: ["9L1"],
     amnesia: ["9L1"],
@@ -102569,6 +102579,7 @@ rayflector: {
 },
 walreinrelaya: {
     learnset: {
+        corrosivebreath: ["9L1"],
         acid: ["9L1"],
         acidarmor: ["9L1"],
         acidspray: ["9L1"],

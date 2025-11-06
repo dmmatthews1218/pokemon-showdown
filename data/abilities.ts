@@ -810,7 +810,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	damp: {
 		onAnyTryMove(target, source, effect) {
-			if (['explosion', 'mindblown', 'mistyexplosion', 'selfdestruct'].includes(effect.id)) {
+			if (['burnoutblast', 'explosion', 'mindblown', 'mistyexplosion', 'selfdestruct'].includes(effect.id)) {
 				this.attrLastMove('[still]');
 				this.add('cant', this.effectState.target, 'ability: Damp', effect, `[of] ${target}`);
 				return false;
@@ -5742,5 +5742,39 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Energized",
 		rating: 1.5,
 		num: 9006,
-    }
+    },
+    microscales: {
+        onSourceModifyAtkPriority: 6,
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Normal' || move.type === 'Fighting') {
+				this.debug('Microscales Atk weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Normal' || move.type === 'Fighting') {
+				this.debug('Microscales SpA weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Microscales",
+		rating: 2,
+		num: 9007,
+    },
+    poisonpower: {
+        onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Poison') {
+				if (!this.heal(target.baseMaxhp / 4)) {
+					this.add('-immune', target, '[from] ability: Poison Power');
+				}
+				return null;
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Poison Power",
+		rating: 3.5,
+		num: 9008,
+    },
 };

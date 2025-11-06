@@ -22129,7 +22129,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		accuracy: 90,
 		basePower: 110,
 		category: "Physical",
-		name: "Crobhammer",
+		name: "Crob-Hammer",
 		pp: 5,
 		priority: 0,
         recoil: [33, 100],
@@ -22233,6 +22233,325 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Tough",
     },
+    melodicmemory: {
+        num: 9008,
+		accuracy: 90,
+		basePower: 0,
+		category: "Status",
+		name: "Melodic Memory",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1, allyanim: 1, metronome: 1 },
+		boosts: {
+			def: -1,
+            spd: -1,
+            spe: -1
+		},
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		zMove: { boost: { atk: 1 } },
+		contestType: "Clever",
+    },
+    quillrain: {
+        num: 9009,
+        accuracy: 90,
+        basePower: 110,
+        category: "Physical",
+		name: "Quill Rain",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, nonsky: 1 },
+		target: "allAdjacentFoes",
+		type: "Fire",
+		contestType: "Cool",
+        secondary: {
+			chance: 30,
+			status: 'brn',
+		},
+        onTryMove(pokemon, target, move) {
+			if (pokemon.hasType('Fire')) return;
+			this.add('-fail', pokemon, 'move: Burn Up');
+			this.attrLastMove('[still]');
+			return null;
+		},
+		self: {
+			onHit(pokemon) {
+				pokemon.setType(pokemon.getTypes(true).map(type => type === "Fire" ? "???" : type));
+				this.add('-start', pokemon, 'typechange', pokemon.getTypes().join('/'), '[from] move: Quill Rain');
+			},
+		},
+    },
+    burnoutblast: {
+        num: 9010,
+		accuracy: 100,
+		basePower: 200,
+		category: "Special",
+		name: "Self-Destruct",
+		pp: 5,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1, noparentalbond: 1 },
+		selfdestruct: "always",
+		secondary: null,
+		target: "allAdjacent",
+		type: "Fire",
+		contestType: "Beautiful",
+    },
+    sneakytactics: {
+        num: 9011,
+		accuracy: 100,
+		basePower: 0,
+		category: "Status",
+		name: "Sneaky Tactics",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, allyanim: 1, noassist: 1, failcopycat: 1 },
+		onHit(target, source, move) {
+			const yourItem = target.takeItem(source);
+			const myItem = source.takeItem();
+			if (target.item || source.item || (!yourItem && !myItem)) {
+				if (yourItem) target.item = yourItem.id;
+				if (myItem) source.item = myItem.id;
+				return false;
+			}
+			if (
+				(myItem && !this.singleEvent('TakeItem', myItem, source.itemState, target, source, move, myItem)) ||
+				(yourItem && !this.singleEvent('TakeItem', yourItem, target.itemState, source, target, move, yourItem))
+			) {
+				if (yourItem) target.item = yourItem.id;
+				if (myItem) source.item = myItem.id;
+				return false;
+			}
+			this.add('-activate', source, 'move: Trick', `[of] ${target}`);
+			if (myItem) {
+				target.setItem(myItem);
+				this.add('-item', target, myItem, '[from] move: Sneaky Tactics');
+			} else {
+				this.add('-enditem', target, yourItem, '[silent]', '[from] move: Sneaky Tactics');
+			}
+			if (yourItem) {
+				source.setItem(yourItem);
+				this.add('-item', source, yourItem, '[from] move: Sneaky Tactics');
+			} else {
+				this.add('-enditem', source, myItem, '[silent]', '[from] move: Sneaky Tactics');
+			}
+		},
+        status: 'brn',
+		secondary: null,
+		target: "normal",
+		type: "Bug",
+		zMove: { boost: { spe: 2 } },
+		contestType: "Clever",
+        ignoreAbility: true,
+    },
+    honk: {
+        num: 9012,
+		accuracy: 100,
+		basePower: 30,
+		category: "Special",
+		name: "Honk!",
+		pp: 10,
+		priority: 3,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		onTry(source) {
+			if (source.activeMoveActions > 1) {
+				this.hint("Honk! only works on your first turn out.");
+				return false;
+			}
+		},
+		secondary: {
+			chance: 100,
+			volatileStatus: 'flinch',
+		},
+		target: "normal",
+		type: "Fairy",
+		contestType: "Cute",
+    },
+    patchwork: {
+        num: 9013,
+		accuracy: 100,
+		basePower: 0,
+		category: "Status",
+		name: "Patchwork",
+		pp: 5,
+		priority: 0,
+		flags: { snatch: 1, heal: 1, metronome: 1 },
+		heal: [3, 4],
+		self: {
+			volatileStatus: 'mustrecharge',
+		},
+		secondary: null,
+		target: "self",
+		type: "Steel",
+		contestType: "Cool",
+        zMove: { effect: 'clearnegativeboost' },
+    },
+    micdrop: {
+        num: 9014,
+		accuracy: 100,
+		basePower: 60,
+		category: "Special",
+		name: "Mic Drop",
+		pp: 10,
+		priority: 0,
+		flags: { sound: 1, contact: 1, protect: 1, mirror: 1, metronome: 1 },
+        condition: {
+			duration: 2,
+			onStart(target) {
+				this.add('-start', target, 'Throat Chop', '[silent]');
+			},
+			onDisableMove(pokemon) {
+				for (const moveSlot of pokemon.moveSlots) {
+					if (this.dex.moves.get(moveSlot.id).flags['sound']) {
+						pokemon.disableMove(moveSlot.id);
+					}
+				}
+			},
+			onBeforeMovePriority: 6,
+			onBeforeMove(pokemon, target, move) {
+				if (!move.isZ && !move.isMax && move.flags['sound']) {
+					this.add('cant', pokemon, 'move: Throat Chop');
+					return false;
+				}
+			},
+			onModifyMove(move, pokemon, target) {
+				if (!move.isZ && !move.isMax && move.flags['sound']) {
+					this.add('cant', pokemon, 'move: Throat Chop');
+					return false;
+				}
+			},
+			onResidualOrder: 22,
+			onEnd(target) {
+				this.add('-end', target, 'Throat Chop', '[silent]');
+			},
+		},
+		secondary: {
+			chance: 100,
+			onHit(target) {
+				target.addVolatile('throatchop');
+			},
+		},
+		selfSwitch: true,
+		target: "normal",
+		type: "Normal",
+		contestType: "Cute",
+    },
+    mukshluck: {
+        num: 9015,
+		accuracy: 100,
+		basePower: 80,
+		category: "Special",
+		name: "Muk Shluck",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, heal: 1, metronome: 1 },
+		drain: [1, 2],
+		secondary: {
+			chance: 10,
+			status: 'psn',
+		},
+		target: "allAdjacentFoes",
+		type: "Poison",
+    },
+    corrosivebreath: {
+        num: 9016,
+		accuracy: 100,
+		basePower: 60,
+		category: "Special",
+		name: "Corrosive Breath",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 100,
+			status: 'psn',
+		},
+		target: "allAdjacentFoes",
+		type: "Poison",
+    },
+    papercut: {
+        num: 9017,
+		accuracy: 80,
+		basePower: 90,
+		category: "Physical",
+		name: "Paper Cut",
+		pp: 5,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1 },
+		willCrit: true,
+		secondary: null,
+		target: "normal",
+		type: "Bug",
+    },
+    staticshock: {
+        num: 9018,
+		accuracy: 100,
+		basePower: 150,
+		category: "Special",
+		name: "Sky Attack",
+		pp: 10,
+		priority: 0,
+		flags: { charge: 1, protect: 1, mirror: 1, distance: 1, metronome: 1, nosleeptalk: 1, failinstruct: 1 },
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		secondary: {
+			chance: 30,
+			status: 'par',
+		},
+		target: "any",
+		type: "Electric",
+		contestType: "Cool",
+    },
+    souleater: {
+        num: 9019,
+		accuracy: 100,
+		basePower: 60,
+		category: "Special",
+		name: "Soul Eater",
+		pp: 10,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, heal: 1, metronome: 1 },
+		drain: [3, 4],
+		secondary: null,
+		target: "normal",
+		type: "Ghost",
+		contestType: "Cool",
+    },
+    scornedsoul: {
+        num: 9020,
+		accuracy: 100,
+		basePower: 120,
+		category: "Physical",
+		name: "Scorned Soul",
+		pp: 10,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, failinstruct: 1 },
+		self: {
+			volatileStatus: 'lockedmove',
+		},
+        onEffectiveness(typeMod, target, type, move) {
+			if (move.type !== 'Ghost') return;
+			if (!target) return; // avoid crashing when called from a chat plugin
+			// ignore effectiveness if the target is Flying type and immune to Ground
+			if (!target.runImmunity('Ghost')) {
+				if (target.hasType('Normal')) return 0;
+			}
+		},
+		secondary: null,
+		target: "randomNormal",
+		type: "Ghost",
+		contestType: "Cool",
+    },
+
 
     // PACK ATTACKS
     strengthofthewolf: {

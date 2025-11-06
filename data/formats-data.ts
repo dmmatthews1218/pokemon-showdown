@@ -6062,7 +6062,7 @@ bord: {
     tier: "OU",
 },
 spirex: {
-    tier: "OU",
+    tier: "Uber",
 },
 hollowbloom: {
     tier: "OU",
