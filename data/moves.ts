@@ -22188,7 +22188,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
         basePower: 0,
 		damage: 100,
 		category: "Physical",
-		isNonstandard: "Past",
 		name: "King's Rule",
 		pp: 15,
 		priority: 0,
@@ -22352,7 +22351,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Honk!",
 		pp: 10,
 		priority: 3,
-		flags: { protect: 1, mirror: 1, metronome: 1 },
+		flags: { sound: 1, protect: 1, mirror: 1, metronome: 1 },
 		onTry(source) {
 			if (source.activeMoveActions > 1) {
 				this.hint("Honk! only works on your first turn out.");
