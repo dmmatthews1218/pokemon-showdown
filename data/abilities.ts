@@ -5654,4 +5654,93 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 9002,
     },
+    pumpkinpatch: {
+        onDamagingHit(damage, target, source, move) {
+			if (move.type === 'Water' || move.type === 'Grass') {
+				this.boost({ atk: 1 });
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Pumpkin Patch",
+		rating: 2.5,
+		num: 9003,
+    },
+    lockin: {
+        onFoeTrapPokemon(pokemon) {
+			if (!pokemon.hasAbility('lockin') && pokemon.isAdjacent(this.effectState.target)) {
+				pokemon.tryTrap(true);
+			}
+		},
+		onFoeMaybeTrapPokemon(pokemon, source) {
+			if (!source) source = this.effectState.target;
+			if (!source || !pokemon.isAdjacent(source)) return;
+			if (!pokemon.hasAbility('lockin')) {
+				pokemon.maybeTrapped = true;
+			}
+		},
+		flags: {},
+		name: "Lock In",
+		rating: 5,
+		num: 9004,
+    },
+    draconicrage: {
+        onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
+			if (move.type === 'Normal' && (!noModifyType.includes(move.id) || this.activeMove?.isMax) &&
+				!(move.isZ && move.category !== 'Status') && !(move.name === 'Tera Blast' && pokemon.terastallized)) {
+				move.type = 'Dragon';
+				move.typeChangerBoosted = this.effect;
+			}
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, pokemon, target, move) {
+			if (move.typeChangerBoosted === this.effect) return this.chainModify([4915, 4096]);
+		},
+		flags: {},
+		name: "Draconic Rage",
+		rating: 4,
+		num: 9005,
+    },
+    energized: {
+        onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Electric') {
+				this.debug('Energized boost');
+				return this.chainModify([5325, 4096]);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Electric') {
+				this.debug('Energized boost');
+				return this.chainModify([5325, 4096]);
+			}
+		},
+        onUpdate(pokemon) {
+			if (pokemon.status === 'slp') {
+				this.add('-activate', pokemon, 'ability: Energized');
+				pokemon.cureStatus();
+			}
+		},
+		onSetStatus(status, target, source, effect) {
+			if (status.id !== 'slp') return;
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Energized');
+			}
+			return false;
+		},
+		onTryAddVolatile(status, target) {
+			if (status.id === 'yawn') {
+				this.add('-immune', target, '[from] ability: Energized');
+				return null;
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Energized",
+		rating: 1.5,
+		num: 9006,
+    }
 };

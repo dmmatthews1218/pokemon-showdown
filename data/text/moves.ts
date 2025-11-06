@@ -7661,5 +7661,20 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
     wavekick: {
         name: "Wave Kick",
         shortDesc: "Does not make contact. High critical hit ratio."
-    }
+    },
+    kingsrule: {
+        name: "King's Rule",
+        desc: "Deals 100 HP of damage to the target. Has a 10% chance to make the target flinch.",
+		shortDesc: "Always does 100 HP of damage; 10% chance to make the target flinch.",
+    },
+    keyshot: {
+        name: "Key Shot",
+        desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "Hits 2-5 times in one turn.",
+    },
+    cagecrash: {
+        name: "Cage Crash",
+        desc: "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 1/3 recoil.",
+    },
 };

@@ -100144,7 +100144,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 },
 pyroble: {
 	learnset: {
-        powerofthepack: ["9L1"],
         strengthofthewolf: ["9L1"],
 		aerialace: ["9L1"],
 		astonish: ["9L1"],
@@ -100199,7 +100198,7 @@ pyroble: {
 		thrash: ["9L1"],
 		thunderpunch: ["9L1"],
 		uturn: ["9L1"],
-		wakeuplap: ["9L1"],
+		wakeupslap: ["9L1"],
 		zenheadbutt: ["9L1"],
 		acidarmor: ["9L1"],
 		acidspray: ["9L1"],
@@ -100291,6 +100290,7 @@ pyroble: {
 },
 crob: {
   learnset: {
+    protect: ["9L1"],
     roundhousekick: ["9L1"],
     crobhammer: ["9L1"],
     aerialuppercut: ["9L1"],
@@ -100396,6 +100396,7 @@ crob: {
 },
 bord: {
   learnset: {
+    protect: ["9L1"],
     honeclaws: ["9L1"],
     hammerarm: ["9L1"],
     machpunch: ["9L1"],
@@ -100486,7 +100487,7 @@ bord: {
     tailwind: ["9L1"],
     taunt: ["9L1"],
     thunderpunch: ["9L1"],
-    wakeuplap: ["9L1"],
+    wakeupslap: ["9L1"],
     wickedblow: ["9L1"],
     wingattack: ["9L1"],
     terablast: ["9L1"],
@@ -100583,6 +100584,8 @@ spirex: {
 },
 hollowbloom: {
   learnset: {
+    kingsrule: ["9L1"],
+    protect: ["9L1"],
     bulletseed: ["9L1"],
     vinewhip: ["9L1"],
     forestscurse: ["9L1"],
@@ -100781,6 +100784,7 @@ planoteria: {
 },
 klefree: {
   learnset: {
+    keyshot: ["9L1"],
     astonish: ["9L1"],
     tackle: ["9L1"],
     fairywind: ["9L1"],
@@ -100874,6 +100878,7 @@ klefree: {
 },
 klefine: {
   learnset: {
+    cagecrash: ["9L1"],
     ancientpower: ["9L1"],
     astonish: ["9L1"],
     barrier: ["9L1"],
@@ -100967,7 +100972,6 @@ giitchedgiri: {
     detect: ["9L1"],
     dive: ["9L1"],
     doublehit: ["9L1"],
-    dracometor: ["9L1"],
     dragonclaw: ["9L1"],
     dragondance: ["9L1"],
     dragonpulse: ["9L1"],
@@ -101329,6 +101333,7 @@ photurix: {
 },
 porcupyre: {
   learnset: {
+    protect: ["9L1"],
     willowisp: ["9L1"],
     defensecurl: ["9L1"],
     rollout: ["9L1"],
@@ -102115,6 +102120,7 @@ helpip: {
 },
 bookwyrm: {
   learnset: {
+    protect: ["9L1"],
     dragonrush: ["9L1"],
     leechlife: ["9L1"],
     strugglebug: ["9L1"],
@@ -102146,7 +102152,7 @@ bookwyrm: {
     crunch: ["9L1"],
     cut: ["9L1"],
     harden: ["9L1"],
-    dracometor: ["9L1"],
+    dracometeor: ["9L1"],
     dragonbreath: ["9L1"],
     dragoncheer: ["9L1"],
     dragondance: ["9L1"],
@@ -102448,7 +102454,7 @@ salamity: {
     strength: ["9L1"],
     substitute: ["9L1"],
     sunnyday: ["9L1"],
-    superfans: ["9L1"],
+    superfang: ["9L1"],
     swagger: ["9L1"],
     taunt: ["9L1"],
     takedown: ["9L1"],

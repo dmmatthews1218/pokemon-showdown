@@ -2437,4 +2437,11 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Vile Vial",
 		shortDesc: "If held by a Venomicon, its Poison- and Flying-type attacks have 1.2x power.",
 	},
+
+    // NCSU PKMN ITEMS
+
+    tatsugiripearl: {
+        name: "Tatsugiri Pearl",
+        shortDesc: "If held by a Giitchedgiri, its Water- and Dragon-type attacks have 1.2x power.",
+    }
 };

@@ -2291,5 +2291,25 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
         name: "Kick Boxer",
         desc: "This Pokemon's kicking, stomping, and leg attacks have their power multiplied by 1.2.",
 		shortDesc: "This Pokemon's kicking/stomping/leg attacks have 1.2x power.",
+    },
+    pumpkinpatch: {
+        name: "Pumpkin Patch",
+        desc: "This Pokemon's Attack is raised 1 stage after it is damaged by a Grass- or Water-type move.",
+		shortDesc: "This Pokemon's Attack is raised by 1 when damaged by Grass/Water moves",
+    },
+    lockin: {
+        name: "Lock In",
+        desc: "Prevents opposing Pokemon from choosing to switch out, unless they are holding a Shed Shell, are a Ghost type, or also have this Ability.",
+		shortDesc: "Prevents foes from choosing to switch unless they also have this Ability.",
+    },
+    draconicrage: {
+        name: "Draconic Rage",
+        desc: "This Pokemon's Normal-type moves become Dragon-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+		shortDesc: "This Pokemon's Normal-type moves become Dragon type and have 1.2x power.",
+    },
+    energized: {
+        name: "Energized",
+        desc: "This Pokemon's offensive stat is 1.3X while using an Electric-type attack. This Pokemon cannot be put to sleep. Gaining this Ability while sleeping cures it.",
+		shortDesc: "This Pokemon's Water power is 1.3x; it can't be slept.",
     }
 };
