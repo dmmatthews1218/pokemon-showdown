@@ -7612,7 +7612,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
     strengthofthewolf: {
         name: "Strength of the Wolf",
         desc: "Raises the user's Attack, Defense, Special Attack, Special Defense, and Speed by 2 stages. This attack charges on the first turn and executes on the second. If the user is holding a Power Herb, the move completes in one turn.",
-		shortDesc: "Charges, then raises Atk, Def, SpA, SpD, Spe by 2 turn 2.",
+		shortDesc: "Charges, then raises all stats by 2 on turn 2.",
 
 		prepare: "[POKEMON] is absorbing power!",
     },
@@ -7665,7 +7665,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
     kingsrule: {
         name: "King's Rule",
         desc: "Deals 100 HP of damage to the target. Has a 10% chance to make the target flinch.",
-		shortDesc: "Always does 100 HP of damage; 10% chance to make the target flinch.",
+		shortDesc: "Always does 100 HP of damage; 10% chance to flinch.",
     },
     keyshot: {
         name: "Key Shot",
@@ -7680,7 +7680,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
     melodicmemory: {
         name: "Melodic Memory",
         desc: "Lowers the target's Defense, Special Defense, and Speed by 1 stage.",
-		shortDesc: "Lowers the target's Defense/Special Defense/Speed by 1.",
+		shortDesc: "Lowers the target's Defense/Sp. Defense/Speed by 1.",
     },
     quillrain: {
         name: "Quill Rain",
@@ -7696,22 +7696,22 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
     sneakytactics: {
         name: "Sneaky Tactics",
         desc: "This move and its effects ignore the Abilities of other Pokemon. Burns the target. The user swaps its held item with the target's held item. Fails if either the user or the target is holding a Mail or Z-Crystal, if neither is holding an item, if the user is trying to give or take a Mega Stone to or from the species that can Mega Evolve with it, or if the user is trying to give or take a Blue Orb, a Red Orb, a Griseous Orb, a Plate, a Drive, or a Memory to or from a Kyogre, a Groudon, a Giratina, an Arceus, a Genesect, or a Silvally, respectively. ",
-		shortDesc: "Ignores the Abilities of other Pokemon. Burns the target. User switches its held item with the target's.",
+		shortDesc: "Ignores Abilities. Burns. User/target switch items.",
     },
     honk: {
         name: "Honk!",
         desc: "Has a 100% chance to make the target flinch. Fails unless it is the user's first turn on the field.",
-		shortDesc: "Hits first. First turn out only. 100% flinch chance.",
+		shortDesc: "Hits first. First turn out only. 100% flinch.",
     },
     patchwork: {
         name: "Patchwork",
         desc: "The user restores 3/4 of its maximum HP, rounded half up. If this move is successful, the user must recharge on the following turn and cannot select a move.",
-		shortDesc: "Heals the user by 75% of its max HP. User cannot move next turn.",
+		shortDesc: "Heals the user for 75%. User cannot move next turn.",
     },
     micdrop: {
         name: "Mic Drop",
         desc: "For 2 turns, the target cannot use sound-based moves. If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
-		shortDesc: "For 2 turns, the target cannot use sound moves. User switches out after damaging the target.",
+		shortDesc: "Target is silenced for 2 turns; User switches.",
     },
     mukshluck: {
         name: "Muk Shluck",
@@ -7731,7 +7731,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
     staticshock: {
         name: "Static Shock",
         desc: "Has a 30% chance to paralyze the target. This attack charges on the first turn and executes on the second. If the user is holding a Power Herb, the move completes in one turn.",
-		shortDesc: "Charges, then hits turn 2. 30% chance to paralyze the target.",
+		shortDesc: "Charges, then hits turn 2. 30% paralysis chance.",
     },
     souleater: {
         name: "Soul Eater",
@@ -7741,7 +7741,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
     scornedsoul: {
         name: "Scorned Soul",
         desc: "This move can hit Normal-type Pokemon. The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk and the user is asleep, the move is used for one turn and does not confuse the user.",
-		shortDesc: "Neutral against Normal-types. Lasts 2-3 turns. Confuses the user afterwards.",
+		shortDesc: "Hits Normal. Lasts 2-3 turns. Confuses the user.",
     },
-    
+
 };
