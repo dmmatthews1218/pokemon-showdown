@@ -22286,7 +22286,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		accuracy: 100,
 		basePower: 200,
 		category: "Special",
-		name: "Self-Destruct",
+		name: "Burnout Blast",
 		pp: 5,
 		priority: 0,
 		flags: { protect: 1, mirror: 1, metronome: 1, noparentalbond: 1 },
@@ -22537,14 +22537,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		self: {
 			volatileStatus: 'lockedmove',
 		},
-        onEffectiveness(typeMod, target, type, move) {
-			if (move.type !== 'Ghost') return;
-			if (!target) return; // avoid crashing when called from a chat plugin
-			// ignore effectiveness if the target is Flying type and immune to Ground
-			if (!target.runImmunity('Ghost')) {
-				if (target.hasType('Normal')) return 0;
-			}
-		},
+        ignoreImmunity: { 'Ghost': true },
 		secondary: null,
 		target: "randomNormal",
 		type: "Ghost",
