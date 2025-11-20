@@ -6115,7 +6115,7 @@ helpip: {
 bookwyrm: {
     tier: "OU",
 },
-felentric: {
+felenctric: {
     tier: "OU",
 },
 salamity: {
@@ -6129,5 +6129,86 @@ walreinrelaya: {
 },
 slushmaid: {
     tier: "OU",
-}
+},
+flerilla: {
+    tier: "OU",
+},
+rapterno: {
+    tier: "OU",
+},
+hardhen: {
+    tier: "OU",
+},
+velocian: {
+    tier: "OU",
+},
+crevantula: {
+    tier: "OU",
+},
+grandolly: {
+    tier: "OU",
+},
+alumnuki: {
+    tier: "OU",
+},
+sloshle: {
+    tier: "OU",
+},
+joque: {
+    tier: "OU",
+},
+hydraid: {
+    tier: "OU",
+},
+majiq: {
+    tier: "OU",
+},
+bananat: {
+    tier: "OU",
+},
+figato: {
+    tier: "OU",
+},
+ambycandy: {
+    tier: "OU",
+},
+lusakua: {
+    tier: "OU",
+},
+arsonpod: {
+    tier: "OU",
+},
+loathid: {
+    tier: "OU",
+},
+freeks: {
+    tier: "OU",
+},
+reterro: {
+    tier: "OU",
+},
+purrity: {
+    tier: "OU",
+},
+dubwolf: {
+    tier: "OU",
+},
+smecko: {
+    tier: "OU",
+},
+smaguana: {
+    tier: "OU",
+},
+smoldron: {
+    tier: "OU",
+},
+raichurelaya: {
+    tier: "OU",
+},
+bearwyrm: {
+    tier: "OU",
+},
+hornbelly: {
+    tier: "OU",
+},
 };
