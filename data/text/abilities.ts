@@ -2322,5 +2322,20 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
         desc: "This Pokemon is immune to Poison-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Poison-type move.",
 		shortDesc: "This Pokemon heals 1/4 of its max HP when hit by Poison moves; Poison immunity.",
     },
+    adaptivearmor: {
+        name: "Adaptive Armor",
+        desc: "On switch-in, this Pokemon's Defense or Special Defense is raised by 1 stage based on the weaker combined offensive stat of all opposing Pokemon. Defense is raised if their Special Attack is lower, and Special Defense is raised if their Attack is the same or lower.",
+		shortDesc: "On switch-in, Defense or Sp. Def is raised 1 stage based on the foes' stronger Attack.",
+    },
+    lastharvest: {
+        name: "Last Harvest",
+        desc: "This Pokemon is immune to Ice-type moves and raises its Speed by 1 stage when hit by an Ice-type move.",
+		shortDesc: "This Pokemon's Speed is raised 1 stage if hit by an Ice move; Ice immunity.",
+    },
+    healinggift: {
+		name: "Healing Gift",
+		shortDesc: "On switch-in, this Pokemon restores 1/4 of its ally's maximum HP, rounded down.",
 
+		heal: "  [POKEMON] drank down all the slushie that [SOURCE] made!",
+	},
 };

@@ -22135,7 +22135,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
         recoil: [33, 100],
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
 		target: "allAdjacentFoes",
-		type: "Water",
+		type: "Fighting",
 		contestType: "Cool",
     },
     aerialuppercut: {
@@ -22543,7 +22543,318 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ghost",
 		contestType: "Cool",
     },
-
+    bunkerbuild: {
+        num: 9021,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Bunker Build",
+		pp: 10,
+		priority: 0,
+		flags: { metronome: 1 },
+		onTry(source) {
+			return !!this.canSwitch(source.side);
+		},
+        sideCondition: 'reflect',
+		condition: {
+			duration: 5,
+			durationCallback(target, source, effect) {
+				if (source?.hasItem('lightclay')) {
+					return 8;
+				}
+				return 5;
+			},
+			onAnyModifyDamage(damage, source, target, move) {
+				if (target !== source && this.effectState.target.hasAlly(target) && this.getCategory(move) === 'Physical') {
+					if (!target.getMoveHitData(move).crit && !move.infiltrates) {
+						this.debug('Reflect weaken');
+						if (this.activePerHalf > 1) return this.chainModify([2732, 4096]);
+						return this.chainModify(0.5);
+					}
+				}
+			},
+			onSideStart(side) {
+				this.add('-sidestart', side, 'Reflect');
+			},
+			onSideResidualOrder: 26,
+			onSideResidualSubOrder: 1,
+			onSideEnd(side) {
+				this.add('-sideend', side, 'Reflect');
+			},
+		},
+		selfSwitch: true,
+		secondary: null,
+		target: "self",
+		type: "Normal",
+		zMove: { effect: 'heal' },
+		contestType: "Cool",
+    },
+    iceslash: {
+        num: 9022,
+		accuracy: 90,
+		basePower: 80,
+		category: "Physical",
+		name: "Ice Slash",
+		pp: 10,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+		secondary: {
+			chance: 10,
+			status: 'frz',
+		},
+		target: "normal",
+		type: "Ice",
+		contestType: "Cool",
+    },
+    badjoke: {
+        num: 9023,
+        accuracy: 100,
+		basePower: 50,
+		category: "Special",
+		name: "Bad Joke",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1 },
+		secondaries: [
+			{
+				chance: 15,
+				status: 'par',
+			}, {
+				chance: 15,
+				volatileStatus: 'flinch',
+			},
+		],
+		target: "allAdjacentFoes",
+		type: "Dark",
+    },
+    jestersdance: {
+        num: 9024,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Jester's Dance",
+		pp: 30,
+		priority: 0,
+		flags: { snatch: 1, metronome: 1 },
+		boosts: {
+			atk: 1,
+			spa: 1,
+		},
+		secondary: null,
+		target: "self",
+		type: "Normal",
+		zMove: { boost: { atk: 1 } },
+		contestType: "Tough",
+    },
+    aquahealing: {
+        num: 9025,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Aqua Healing",
+		pp: 20,
+		priority: 0,
+		flags: { snatch: 1, metronome: 1 },
+		volatileStatus: 'aquaring',
+		condition: {
+			onStart(pokemon) {
+				this.add('-start', pokemon, 'Aqua Ring');
+			},
+			onResidualOrder: 6,
+			onResidual(pokemon) {
+				this.heal(pokemon.baseMaxhp / 16);
+			},
+		},
+		secondary: null,
+		target: "allies",
+		type: "Water",
+		zMove: { boost: { def: 1 } },
+		contestType: "Beautiful",
+    },
+    prismblast: {
+        num: 9026,
+        accuracy: 95,
+		basePower: 80,
+		category: "Special",
+		name: "Prism Blast",
+		pp: 10,
+		flags: { protect: 1, mirror: 1, distance: 1, metronome: 1, pulse: 1 },
+		onEffectiveness(typeMod, target, type, move) {
+			return typeMod + this.dex.getEffectiveness('Fairy', type);
+		},
+		priority: 0,
+		secondary: null,
+		target: "any",
+		type: "Dragon",
+		zMove: { basePower: 170 },
+		contestType: "Tough",
+    },
+    trickyspell: {
+        num: 9027,
+        accuracy: 100,
+		basePower: 0,
+		category: "Status",
+		name: "Tricky Spell",
+		pp: 10,
+		priority: 0,
+		flags: { mirror: 1, metronome: 1 },
+		onHitField(target, source) {
+			const sideConditions = [
+				'mist', 'lightscreen', 'reflect', 'spikes', 'safeguard', 'tailwind', 'toxicspikes', 'stealthrock', 'waterpledge', 'firepledge', 'grasspledge', 'stickyweb', 'auroraveil', 'luckychant', 'gmaxsteelsurge', 'gmaxcannonade', 'gmaxvinelash', 'gmaxwildfire', 'gmaxvolcalith',
+			];
+			let success = false;
+			if (this.gameType === "freeforall") {
+				// the list of all sides in clockwise order
+				const sides = [this.sides[0], this.sides[3]!, this.sides[1], this.sides[2]!];
+				const temp: { [k: number]: typeof source.side.sideConditions } = { 0: {}, 1: {}, 2: {}, 3: {} };
+				for (const side of sides) {
+					for (const id in side.sideConditions) {
+						if (!sideConditions.includes(id)) continue;
+						temp[side.n][id] = side.sideConditions[id];
+						delete side.sideConditions[id];
+						success = true;
+					}
+				}
+				for (let i = 0; i < 4; i++) {
+					const sourceSideConditions = temp[sides[i].n];
+					const targetSide = sides[(i + 1) % 4]; // the next side in rotation
+					for (const id in sourceSideConditions) {
+						targetSide.sideConditions[id] = sourceSideConditions[id];
+						targetSide.sideConditions[id].target = targetSide;
+					}
+				}
+			} else {
+				const sourceSideConditions = source.side.sideConditions;
+				const targetSideConditions = source.side.foe.sideConditions;
+				const sourceTemp: typeof sourceSideConditions = {};
+				const targetTemp: typeof targetSideConditions = {};
+				for (const id in sourceSideConditions) {
+					if (!sideConditions.includes(id)) continue;
+					sourceTemp[id] = sourceSideConditions[id];
+					delete sourceSideConditions[id];
+					success = true;
+				}
+				for (const id in targetSideConditions) {
+					if (!sideConditions.includes(id)) continue;
+					targetTemp[id] = targetSideConditions[id];
+					delete targetSideConditions[id];
+					success = true;
+				}
+				for (const id in sourceTemp) {
+					targetSideConditions[id] = sourceTemp[id];
+					targetSideConditions[id].target = source.side.foe;
+				}
+				for (const id in targetTemp) {
+					sourceSideConditions[id] = targetTemp[id];
+					sourceSideConditions[id].target = source.side;
+				}
+			}
+			if (!success) return false;
+			this.add('-swapsideconditions');
+			this.add('-activate', source, 'move: Court Change');
+		},
+		secondary: null,
+		target: "all",
+		type: "Fairy",
+    },
+    blackmagic: {
+        num: 9028,
+        accuracy: 100,
+		basePower: 80,
+		category: "Special",
+		name: "Black Magic",
+		pp: 10,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 30,
+			onHit(target, source) {
+				const result = this.random(6);
+				if (result === 0) {
+					target.trySetStatus('psn', source);
+				} else if (result === 1) {
+					target.trySetStatus('par', source);
+				} else if (result === 2) {
+					target.trySetStatus('slp', source);
+				} else if (result === 3) {
+                    target.trySetStatus('brn', source);
+                } else if (result === 4) {
+                    target.trySetStatus('frz', source);
+                } else {
+                    target.addVolatile('confusion', source);
+                }
+			},
+		},
+		target: "normal",
+		type: "Poison",
+    },
+    bananaslamma: {
+        num: 9029,
+        accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Banana Slamma!",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, contact: 1, mirror: 1, nonsky: 1, metronome: 1 },
+		volatileStatus: 'smackdown',
+        onEffectiveness(typeMod, target, type) {
+			if (type === 'Flying') return 1;
+		},
+		condition: {
+			noCopy: true,
+			onStart(pokemon) {
+				let applies = false;
+				if (pokemon.hasType('Flying') || pokemon.hasAbility('levitate')) applies = true;
+				if (pokemon.hasItem('ironball') || pokemon.volatiles['ingrain'] ||
+					this.field.getPseudoWeather('gravity')) applies = false;
+				if (pokemon.removeVolatile('fly') || pokemon.removeVolatile('bounce')) {
+					applies = true;
+					this.queue.cancelMove(pokemon);
+					pokemon.removeVolatile('twoturnmove');
+				}
+				if (pokemon.volatiles['magnetrise']) {
+					applies = true;
+					delete pokemon.volatiles['magnetrise'];
+				}
+				if (pokemon.volatiles['telekinesis']) {
+					applies = true;
+					delete pokemon.volatiles['telekinesis'];
+				}
+				if (!applies) return false;
+				this.add('-start', pokemon, 'Smack Down');
+			},
+			onRestart(pokemon) {
+				if (pokemon.removeVolatile('fly') || pokemon.removeVolatile('bounce')) {
+					this.queue.cancelMove(pokemon);
+					pokemon.removeVolatile('twoturnmove');
+					this.add('-start', pokemon, 'Smack Down');
+				}
+			},
+			// groundedness implemented in battle.engine.js:BattlePokemon#isGrounded
+		},
+		secondary: null,
+		target: "normal",
+		type: "Grass",
+		contestType: "Tough",
+    },
+    figjuice: {
+        num: 9030,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Fig Juice",
+		pp: 5,
+		priority: 0,
+		flags: { snatch: 1, heal: 1, metronome: 1 },
+		onHit(pokemon) {
+			const success = !!this.heal(this.modify(pokemon.maxhp, 0.25));
+			return pokemon.cureStatus() || success;
+		},
+		secondary: null,
+		target: "allies",
+		type: "Grass",
+    },
 
     // PACK ATTACKS
     strengthofthewolf: {

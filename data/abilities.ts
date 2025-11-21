@@ -5777,4 +5777,49 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 9008,
     },
+    adaptivearmor: {
+        onStart(pokemon) {
+			let totalatk = 0;
+			let totalspa = 0;
+			for (const target of pokemon.foes()) {
+				totalatk += target.getStat('atk', false, true);
+				totalspa += target.getStat('spa', false, true);
+			}
+			if (totalatk && totalatk >= totalspa) {
+				this.boost({ def: 1 });
+			} else if (totalspa) {
+				this.boost({ spd: 1 });
+			}
+		},
+		flags: {},
+		name: "Adaptive Armor",
+		rating: 3.5,
+		num: 9009,
+    },
+    lastharvest: {
+        onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Ice') {
+				if (!this.boost({ spe: 1 })) {
+					this.add('-immune', target, '[from] ability: Last Harvest');
+				}
+				return null;
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Last Harvest",
+		rating: 3,
+		num: 9010,
+    },
+    healinggift: {
+		onSwitchInPriority: -2,
+		onStart(pokemon) {
+			for (const ally of pokemon.adjacentAllies()) {
+				this.heal(ally.baseMaxhp / 4, ally, pokemon);
+			}
+		},
+		flags: {},
+		name: "Healing Gift",
+		rating: 0,
+		num: 9011,
+	},
 };

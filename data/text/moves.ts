@@ -7743,5 +7743,56 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
         desc: "This move can hit Normal-type Pokemon. The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk and the user is asleep, the move is used for one turn and does not confuse the user.",
 		shortDesc: "Hits Normal. Lasts 2-3 turns. Confuses the user.",
     },
+    bunkerbuild: {
+        name: "Bunker Build",
+        desc: "The user switches out. For 5 turns, the user and its party members take 0.5x damage from physical attacks, or 0.66x damage if in a Double Battle. Damage is not reduced further with Aurora Veil. Critical hits ignore this effect. It is removed from the user's side if the user or an ally is successfully hit by Brick Break, Psychic Fangs, or Defog. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side.",
+		shortDesc: "User Switches. Halves physical damage for 5 turns.",
+    },
+    badjoke: {
+        name: "Bad Joke",
+        desc: "Has a 15% chance to make the target flinch or confused.",
+		shortDesc: "15% chance to make the foe(s) flinch or confused.",
+    },
+    jestersdance: {
+		name: "Jester's Dance",
+		desc: "Raises the user's Attack and Special Attack by 1 stage.",
+		shortDesc: "Raises the user's Attack and Sp. Atk by 1.",
+	},
+    aquahealing: {
+        name: "Aqua Healing",
+        desc: "Allies have 1/16 of their maximum HP, rounded down, restored at the end of each turn while it remains active. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down. If the user uses Baton Pass, the replacement will receive the healing effect.",
+		shortDesc: "Allies recover 1/16 max HP per turn.",
 
+		start: "  [POKEMON] surrounded itself with a veil of water!",
+		heal: "  A veil of water restored [POKEMON]'s HP!",
+    },
+    prismblast: {
+        name: "Prism Blast",
+        desc: "This move combines Fairy in its type effectiveness against the target.",
+		shortDesc: "Combines Fairy in its type effectiveness.",
+    },
+    trickyspell: {
+        name: "Tricky Spell",
+        desc: "Switches the Mist, Light Screen, Reflect, Spikes, Safeguard, Tailwind, Toxic Spikes, Stealth Rock, Water Pledge, Fire Pledge, Grass Pledge, Sticky Web, Aurora Veil, G-Max Steelsurge, G-Max Cannonade, G-Max Vine Lash, and G-Max Wildfire effects from the user's side to the opposing side and vice versa.",
+		shortDesc: "Swaps user's field effects with the opposing side.",
+
+		activate: "  [POKEMON] swapped the battle effects affecting each side of the field!",
+    },
+    blackmagic: {
+        name: "Black Magic",
+        desc: "Has a 30% chance to cause the target to either [REDACTED].",
+		shortDesc: "30% chance to [REDACTED] target.",
+    },
+    bananaslamma: {
+        name: "Banana Slamma!",
+        desc: "This move's type effectiveness against Flying is changed to be super effective no matter what this move's type is. This move can hit a target using Bounce, Fly, or Sky Drop, or is under the effect of Sky Drop. If this move hits a target under the effect of Bounce, Fly, Magnet Rise, or Telekinesis, the effect ends. If the target is a Flying type that has not used Roost this turn or a Pokemon with the Levitate Ability, it loses its immunity to Ground-type attacks and the Arena Trap Ability as long as it remains active. During the effect, Magnet Rise fails for the target and Telekinesis fails against the target.",
+		shortDesc: "Removes the target's Ground immunity. 2x on flying",
+
+		start: "  [POKEMON] fell straight down!",
+    },
+    figjuice: {
+        name: "Fig Juice",
+        desc: "Each Pokemon on the user's side restores 1/4 of its maximum HP, rounded half up, and has its status condition cured.",
+		shortDesc: "User and allies: healed 1/4 max HP, status cured.",
+    },
 };

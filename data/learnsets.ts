@@ -101487,6 +101487,15 @@ slushmaid: {
 },
 snatchet: {
   learnset: {
+    thunderfang: ["9L1"],
+    seedbomb: ["9L1"],
+    nuzzle: ["9L1"],
+    willowisp: ["9L1"],
+    bulletseed: ["9L1"],
+    grassknot: ["9L1"],
+    playrough: ["9L1"],
+    poisonjab: ["9L1"],
+    closecombat: ["9L1"],
     sneakytactics: ["9L1"],
     protect: ["9L1"],
     falseswipe: ["9L1"],
@@ -101821,7 +101830,6 @@ kittune: {
 nikosluj: {
   learnset: {
     mukshluck: ["9L1"],
-    shellsmash: ["9L1"],
     acid: ["9L1"],
     acidarmor: ["9L1"],
     acidspray: ["9L1"],
@@ -101913,6 +101921,9 @@ nikosluj: {
 },
 helpip: {
   learnset: {
+    bunkerbuild: ["9L1"],
+    fakeout: ["9L1"],
+    followme: ["9L1"],
     helpinghand: ["9L1"],
     afteryou: ["9L1"],
     allyswitch: ["9L1"],
@@ -102050,7 +102061,6 @@ bookwyrm: {
     ficklebeam: ["9L1"],
     flamethrower: ["9L1"],
     firelash: ["9L1"],
-    firstimpression: ["9L1"],
     flail: ["9L1"],
     flareblitz: ["9L1"],
     furycutter: ["9L1"],
@@ -102479,7 +102489,6 @@ walreinrelaya: {
         guillotine: ["9L1"],
         bulletseed: ["9L1"],
         chipaway: ["9L1"],
-        clangingscales: ["9L1"],
         clearsmog: ["9L1"],
         closecombat: ["9L1"],
         confuseray: ["9L1"],
@@ -102930,6 +102939,8 @@ velocian: {
 },
 crevantula: {
     learnset: {
+        iceslash: ["9L1"],
+        protect: ["9L1"],
         acupressure: ["9L1"],
         agility: ["9L1"],
         ancientpower: ["9L1"],
@@ -102939,7 +102950,7 @@ crevantula: {
         bide: ["9L1"],
         bite: ["9L1"],
         crunch: ["9L1"],
-        breakingswipes: ["9L1"],
+        breakingswipe: ["9L1"],
         brutalswing: ["9L1"],
         bugbite: ["9L1"],
         bugbuzz: ["9L1"],
@@ -103075,7 +103086,7 @@ grandolly: {
         endure: ["9L1"],
         fairywind: ["9L1"],
         floralhealing: ["9L1"],
-        grassterrain: ["9L1"],
+        grassyterrain: ["9L1"],
         flowershield: ["9L1"],
         frenzyplant: ["9L1"],
         frostbreath: ["9L1"],
@@ -103164,7 +103175,7 @@ alumnuki: {
         grassknot: ["9L1"],
         grasswhistle: ["9L1"],
         grassyglide: ["9L1"],
-        grassterrain: ["9L1"],
+        grassyterrain: ["9L1"],
         gravity: ["9L1"],
         headbutt: ["9L1"],
         healbell: ["9L1"],
@@ -103323,7 +103334,6 @@ nunadol: {
         flatter: ["9L1"],
         fling: ["9L1"],
         trickroom: ["9L1"],
-        followme: ["9L1"],
         gigaimpact: ["9L1"],
         grassknot: ["9L1"],
         guardsplit: ["9L1"],
@@ -103391,6 +103401,8 @@ nunadol: {
 },
 joque: {
     learnset: {
+        badjoke: ["9L1"],
+        jestersdance: ["9L1"],
         chillyreception: ["9L1"],
         acrobatics: ["9L1"],
         acidspray: ["9L1"],
@@ -103480,7 +103492,7 @@ joque: {
         roleplay: ["9L1"],
         scaryface: ["9L1"],
         secretpower: ["9L1"],
-        seismic: ["9L1"],
+        seismictoss: ["9L1"],
         shadowball: ["9L1"],
         skillswap: ["9L1"],
         smokescreen: ["9L1"],
@@ -103500,6 +103512,8 @@ joque: {
 },
 hydraid: {
     learnset: {
+        aquahealing: ["9L1"],
+        prismblast: ["9L1"],
         acid: ["9L1"],
         acidspray: ["9L1"],
         acidarmor: ["9L1"],
@@ -103534,7 +103548,7 @@ hydraid: {
         defensecurl: ["9L1"],
         dive: ["9L1"],
         surf: ["9L1"],
-        dracometor: ["9L1"],
+        dracometeor: ["9L1"],
         dragonbreath: ["9L1"],
         dragoncheer: ["9L1"],
         dragonenergy: ["9L1"],
@@ -103601,6 +103615,8 @@ hydraid: {
 },
 majiq: {
     learnset: {
+        trickyspell: ["9L1"],
+        blackmagic: ["9L1"],
         trick: ["9L1"],
         agility: ["9L1"],
         allyswitch: ["9L1"],
@@ -103809,6 +103825,8 @@ pakokap: {
 },
 bananat: {
     learnset: {
+        bananaslamma: ["9L1"],
+        protect: ["9L1"],
         absorb: ["9L1"],
         acid: ["9L1"],
         acidarmor: ["9L1"],
@@ -103851,7 +103869,7 @@ bananat: {
         megadrain: ["9L1"],
         grassknot: ["9L1"],
         grassyglide: ["9L1"],
-        grassterrain: ["9L1"],
+        grassyterrain: ["9L1"],
         growl: ["9L1"],
         screech: ["9L1"],
         swordsdance: ["9L1"],
@@ -103902,7 +103920,7 @@ bananat: {
         tailwind: ["9L1"],
         taunt: ["9L1"],
         thief: ["9L1"],
-        tailblaze: ["9L1"],
+        trailblaze: ["9L1"],
         trick: ["9L1"],
         wingattack: ["9L1"],
         wideguard: ["9L1"],
@@ -103916,7 +103934,6 @@ figato: {
         gigadrain: ["9L1"],
         doubleteam: ["9L1"],
         afteryou: ["9L1"],
-        followme: ["9L1"],
         alluringvoice: ["9L1"],
         aromatherapy: ["9L1"],
         attract: ["9L1"],
