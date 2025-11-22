@@ -22786,7 +22786,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			},
 		},
 		target: "normal",
-		type: "Poison",
+		type: "Fairy",
     },
     bananaslamma: {
         num: 9029,
