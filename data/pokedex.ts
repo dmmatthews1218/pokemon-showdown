@@ -20459,7 +20459,7 @@ purrity: {
     types: ["Water", "Psychic"],
     genderRatio: {M: 0.5, F: 0.5},
     baseStats: {hp: 110, atk: 70, def: 80, spa: 90, spd: 90, spe: 80},
-    abilities: {0: "Cleanse"},
+    abilities: {0: "Cleansing Purr"},
     weightkg: 104.2,
     color: "Blue",
     eggGroups: ["Undiscovered"],

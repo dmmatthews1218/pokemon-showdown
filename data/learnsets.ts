@@ -103279,6 +103279,7 @@ sloshle: {
 },
 nunadol: {
     learnset: {
+        liquidation: ["9L1"],
         return: ["9L1"],
         acidarmor: ["9L1"],
         acupressure: ["9L1"],
