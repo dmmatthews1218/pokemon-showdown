@@ -7840,5 +7840,9 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
         name: "Sweet Surprise",
         desc: "If the target is an ally, this move restores 1/2 of its maximum HP, rounded down, instead of dealing damage.",
 		shortDesc: "If the target is an ally, heals 50% of its max HP.",
-    }
+    },
+    iceslash: {
+		name: "Ice Slash",
+		shortDesc: "No additional effect.",
+	},
 };

@@ -104955,6 +104955,7 @@ raichurelaya: {
 },
 bearwyrm: {
     learnset: {
+        poisongas: ["9L1"],
         acid: ["9L1"],
         acidarmor: ["9L1"],
         acidspray: ["9L1"],
