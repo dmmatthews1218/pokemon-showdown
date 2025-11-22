@@ -20170,6 +20170,7 @@ slushmaid: {
     color: "Blue",
     eggGroups: ["Undiscovered"],
     heightm: 1.7,
+    evos: ["Hydraid"],
 },
 helpip: {
     num: 9026,
@@ -20294,6 +20295,7 @@ sloshle: {
     color: "Blue",
     eggGroups: ["Water 1"],
     heightm: 0.4,
+    evos: ["Slushmaid"],
 },
 nunadol: {
     num: 9035,
@@ -20486,6 +20488,7 @@ smecko: {
     color: "Red",
     eggGroups: ["Field"],
     heightm: 0.4,
+    evos: ["Smaguana"],
 },
 smaguana: {
     num: 9051,
@@ -20496,6 +20499,7 @@ smaguana: {
     abilities: {0: "Shed Skin", 1: "Neutralizing Gas", H: "Speed Boost"},
     weightkg: 6.1,
     color: "Red",
+    evos: ["Smoldron"],
     eggGroups: ["Field"],
     heightm: 0.6,
 },

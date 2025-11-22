@@ -104700,6 +104700,7 @@ smecko: {
         terablast: ["9L1"],
         terrainpulse: ["9L1"],
         willowisp: ["9L1"],
+        flamethrower: ["9L1"],
     },
 },
 smaguana: {
@@ -104765,10 +104766,12 @@ smaguana: {
         thrash: ["9L1"],
         toxic: ["9L1"],
         willowisp: ["9L1"],
+        flamethrower: ["9L1"],
     },
 },
 smoldron: {
     learnset: {
+        flamethrower: ["9L1"],
         internalcombustion: ["9L1"],
         acid: ["9L1"],
         acidspray: ["9L1"],
