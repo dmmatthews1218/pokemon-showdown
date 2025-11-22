@@ -676,6 +676,10 @@ const OFFICIAL_AVATARS_RADU = new Set([
 	'miku-ice',
 ]);
 
+const OFFICIAL_AVATARS_CLUB = new Set([
+	'brickyard-preacher',
+]);
+
 for (const avatar of OFFICIAL_AVATARS_BELIOT419) OFFICIAL_AVATARS.add(avatar);
 for (const avatar of OFFICIAL_AVATARS_GNOMOWLADNY) OFFICIAL_AVATARS.add(avatar);
 for (const avatar of OFFICIAL_AVATARS_BRUMIRAGE) OFFICIAL_AVATARS.add(avatar);
@@ -689,6 +693,7 @@ for (const avatar of OFFICIAL_AVATARS_SELENA) OFFICIAL_AVATARS.add(avatar);
 for (const avatar of OFFICIAL_AVATARS_WISTERIAPURPLE) OFFICIAL_AVATARS.add(avatar);
 for (const avatar of OFFICIAL_AVATARS_FLAMIBANE) OFFICIAL_AVATARS.add(avatar);
 for (const avatar of OFFICIAL_AVATARS_RADU) OFFICIAL_AVATARS.add(avatar);
+for (const avatar of OFFICIAL_AVATARS_CLUB) OFFICIAL_AVATARS.add(avatar);
 
 export const commands: Chat.ChatCommands = {
 	avatar(target, room, user) {
@@ -807,7 +812,7 @@ export const commands: Chat.ChatCommands = {
 				right.
 			</p>, <p>
 				Avatars from generations other than 4-5 are hidden. You can find them in this {}
-				<a href="https://play.pokemonshowdown.com/sprites/trainers/"><strong>full list of avatars</strong></a>. {}
+				<a href="https://raw.githubusercontent.com/dmmatthews1218/relaya-showdown-assets/main/play.pokemonshowdown.com/sprites/trainers/"><strong>full list of avatars</strong></a>. {}
 				You can use them by typing <code>/avatar <i>[avatar's name]</i></code> into any chat. For example, {}
 				<code>/avatar erika-gen2</code>.
 			</p>]}
