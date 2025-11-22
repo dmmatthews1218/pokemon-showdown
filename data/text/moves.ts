@@ -7720,7 +7720,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
     },
     corrosivebreath: {
         name: "Corrosive Breath",
-        desc: "Has a 100% chance to poison the target.",
+        desc: "Has a 50% chance to poison the target.",
         shortDesc: "Poisons foe(s).",
     },
     papercut: {

@@ -5891,5 +5891,5 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0,
 		num: 9015,
     },
-    
+
 };

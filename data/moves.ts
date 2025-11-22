@@ -22455,14 +22455,14 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
     corrosivebreath: {
         num: 9016,
 		accuracy: 100,
-		basePower: 60,
+		basePower: 50,
 		category: "Special",
 		name: "Corrosive Breath",
 		pp: 10,
 		priority: 0,
 		flags: { protect: 1, mirror: 1, metronome: 1 },
 		secondary: {
-			chance: 100,
+			chance: 50,
 			status: 'psn',
 		},
 		target: "allAdjacentFoes",
