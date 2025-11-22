@@ -5822,4 +5822,74 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0,
 		num: 9011,
 	},
+    forgedinflames: {
+        onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Water') {
+				if (!this.heal(target.baseMaxhp / 4)) {
+					this.add('-immune', target, '[from] ability: Water Absorb');
+				}
+				return null;
+			}
+		},
+        onDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target)) {
+				if (this.randomChance(2, 10)) {
+					source.trySetStatus('brn', target);
+				}
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Forged in Flames",
+		rating: 3.5,
+		num: 9012,
+    },
+    roarofthousands: {
+        onSourceAfterFaint(length, target, source, effect) {
+			if (effect && effect.effectType === 'Move') {
+				const bestStat = source.getBestStat(true, true);
+				this.boost({ [bestStat]: length }, source);
+			}
+		},
+		flags: {},
+		name: "Roar of Thousands",
+		rating: 3.5,
+		num: 9013,
+    },
+    cleansingpurr: {
+        onSwitchInPriority: -2,
+		onStart(pokemon) {
+			for (const ally of pokemon.adjacentAllies()) {
+				this.heal(ally.baseMaxhp / 4, ally, pokemon);
+			}
+		},
+		flags: {},
+		name: "Cleansing Purr",
+		rating: 0,
+		num: 9014,
+    },
+    nightvision: {
+        onTryBoost(boost, target, source, effect) {
+			if (source && target === source) return;
+			if (boost.accuracy && boost.accuracy < 0) {
+				delete boost.accuracy;
+				if (!(effect as ActiveMove).secondaries) {
+					this.add("-fail", target, "unboost", "accuracy", "[from] ability: Mind's Eye", `[of] ${target}`);
+				}
+			}
+		},
+		onModifyMovePriority: -5,
+		onModifyMove(move) {
+			move.ignoreEvasion = true;
+			if (!move.ignoreImmunity) move.ignoreImmunity = {};
+			if (move.ignoreImmunity !== true) {
+				move.ignoreImmunity['Fighting'] = true;
+				move.ignoreImmunity['Normal'] = true;
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Night Vision",
+		rating: 0,
+		num: 9015,
+    },
+    
 };

@@ -22285,7 +22285,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
         num: 9010,
 		accuracy: 100,
 		basePower: 200,
-		category: "Physical",
+		category: "Special",
 		name: "Burnout Blast",
 		pp: 5,
 		priority: 0,
@@ -22854,6 +22854,202 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "allies",
 		type: "Grass",
+    },
+    phantomlight: {
+        num: 9031,
+		accuracy: 100,
+		basePower: 120,
+		category: "Physical",
+		name: "Phantom Light",
+		pp: 10,
+		priority: 0,
+		flags: { contact: 1, charge: 1, protect: 1, mirror: 1, metronome: 1 },
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			this.boost({ atk: 1 }, attacker, attacker, move);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		secondary: null,
+		target: "normal",
+		type: "Ghost",
+    },
+    powderbomb: {
+        num: 9032,
+		accuracy: 100,
+		basePower: 80,
+		category: "Special",
+		name: "Powder Bomb",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, reflectable: 1, mirror: 1, metronome: 1 },
+		volatileStatus: 'tarshot',
+		condition: {
+			onStart(pokemon) {
+				if (pokemon.terastallized) return false;
+				this.add('-start', pokemon, 'Tar Shot');
+			},
+			onEffectivenessPriority: -2,
+			onEffectiveness(typeMod, target, type, move) {
+				if (move.type !== 'Fire') return;
+				if (!target) return;
+				if (type !== target.getTypes()[0]) return;
+				return typeMod + 1;
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fire",
+    },
+    bittermurmur: {
+        num: 9033,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		overrideDefensiveStat: 'spd',
+		name: "Bitter Murmur",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: null,
+		target: "normal",
+		type: "Dark",
+		contestType: "Beautiful",
+    },
+    flutteringfailure: {
+        num: 9034,
+		accuracy: 100,
+		basePower: 0,
+		basePowerCallback(pokemon, target, move) {
+			const hp = target.hp;
+			const maxHP = target.maxhp;
+			const bp = Math.floor(Math.floor((120 * (100 * Math.floor(hp * 4096 / maxHP)) + 2048 - 1) / 4096) / 100) || 1;
+			this.debug(`BP for ${hp}/${maxHP} HP: ${bp}`);
+			return bp;
+		},
+		category: "Special",
+		isNonstandard: "Past",
+		name: "Fluttering Failure",
+		pp: 15,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		secondary: null,
+		target: "normal",
+		type: "Fairy",
+		zMove: { basePower: 190 },
+		maxMove: { basePower: 140 },
+		contestType: "Tough",
+    },
+    powerofmany: {
+        num: 9035,
+		accuracy: 100,
+		basePower: 15,
+		category: "Special",
+		name: "Power of Many",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1, bullet: 1 },
+		multihit: [2, 5],
+		secondary: null,
+		target: "normal",
+		type: "Fairy",
+		zMove: { basePower: 140 },
+		maxMove: { basePower: 130 },
+		contestType: "Cool",
+    },
+    internalcombustion: {
+        num: 9036,
+		accuracy: true,
+		basePower: 150,
+		category: "Physical",
+		name: "Internal Combustion",
+		pp: 10,
+		priority: 0,
+		flags: { charge: 1, protect: 1, mirror: 1, metronome: 1 },
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			if (['sunnyday', 'desolateland'].includes(attacker.effectiveWeather())) {
+				this.attrLastMove('[still]');
+				this.addMove('-anim', attacker, move.name, defender);
+				return;
+			}
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+        self: {
+			boosts: {
+				def: -1,
+				spd: -1,
+			},
+		},
+		secondary: null,
+		target: "allAdjacentFoes",
+		type: "Fire",
+    },
+    tonguewhip: {
+        num: 9037,
+        accuracy: 100,
+		basePower: 50,
+		category: "Physical",
+		isNonstandard: "Past",
+		name: "Tongue Whip",
+		pp: 10,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+        secondary: {
+			chance: 20,
+			status: 'par',
+		},
+		willCrit: true,
+		target: "normal",
+		type: "Poison",
+		contestType: "Cool",
+    },
+    sweetsurprise: {
+        num: 9038,
+		accuracy: 100,
+		basePower: 90,
+		category: "Special",
+		name: "Sweet Surprise",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, allyanim: 1, metronome: 1, bullet: 1 },
+		onTryHit(target, source, move) {
+			if (source.isAlly(target)) {
+				move.basePower = 0;
+				move.infiltrates = true;
+			}
+		},
+		onTryMove(source, target, move) {
+			if (source.isAlly(target) && source.volatiles['healblock']) {
+				this.attrLastMove('[still]');
+				this.add('cant', source, 'move: Heal Block', move);
+				return false;
+			}
+		},
+		onHit(target, source, move) {
+			if (source.isAlly(target)) {
+				if (!this.heal(Math.floor(target.baseMaxhp * 0.5))) {
+					return this.NOT_FAIL;
+				}
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fairy",
+		contestType: "Cute",
     },
 
     // PACK ATTACKS

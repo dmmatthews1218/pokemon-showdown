@@ -7795,4 +7795,50 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
         desc: "Each Pokemon on the user's side restores 1/4 of its maximum HP, rounded half up, and has its status condition cured.",
 		shortDesc: "User and allies: healed 1/4 max HP, status cured.",
     },
+    phantomlight: {
+        name: "Phantom Light",
+        desc: "This attack charges on the first turn and executes on the second. Raises the user's Attack by 1 stage on the first turn. If the user is holding a Power Herb, the move completes in one turn.",
+		shortDesc: "Raises user's Atk by 1 on turn 1. Hits turn 2.",
+
+		prepare: "[POKEMON] is overflowing with phantom power!",
+    },
+    powderbomb: {
+        name: "Powder Bomb",
+        desc: "Until the target switches out, the effectiveness of Fire-type moves is doubled against it.",
+		shortDesc: "Target weaker to Fire.",
+
+		start: "  [POKEMON] became weaker to fire!",
+    },
+    bittermurmur: {
+        name: "Bitter Murmur",
+        desc: "Deals damage to the target based on its Special Defense instead of Defense.",
+		shortDesc: "Damages target based on Sp. Def, not Defense.",
+    },
+    flutteringfailure: {
+        name: "Fluttering Failure",
+        desc: "Power is equal to 120 * (target's current HP / target's maximum HP), rounded half down, but not less than 1.",
+		shortDesc: "More power the more HP the target has left.",
+    },
+    powerofmany: {
+        name: "Power of Many",
+        desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "Hits 2-5 times in one turn.",
+    },
+    internalcombustion: {
+        name: "Internal Combustion",
+        desc: "This attack charges on the first turn and executes on the second. If the user is holding a Power Herb or the weather is Desolate Land or Sunny Day, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Desolate Land or Sunny Day, the move still requires a turn to charge. Lowers user's defense and sp. def. after attacking.",
+		shortDesc: "Charges turn 1. Sun: no charge. Lowers def/sp. def.",
+
+		prepare: "[POKEMON] heated up!",
+    },
+    tonguewhip: {
+        name: "Tongue Whip",
+        desc: "This move has a 20% chance to paralyze the target. This move is always a critical hit unless the target is under the effect of Lucky Chant or has the Battle Armor or Shell Armor Abilities.",
+		shortDesc: "20% chance to paralyze target. Always critical hits.",
+    },
+    sweetsurprise: {
+        name: "Sweet Surprise",
+        desc: "If the target is an ally, this move restores 1/2 of its maximum HP, rounded down, instead of dealing damage.",
+		shortDesc: "If the target is an ally, heals 50% of its max HP.",
+    }
 };

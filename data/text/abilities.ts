@@ -2338,4 +2338,26 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 
 		heal: "  [POKEMON] drank down all the slushie that [SOURCE] made!",
 	},
+    forgedinflames: {
+        name: "Forged in Flames",
+        desc: "This Pokemon is immune to Fire-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Fire-type move.",
+		shortDesc: "20% Burn on Contact; Heals 1/4 when hit by Fire moves; Fire immunity.",
+    },
+    roarofthousands: {
+        name: "Roar of Thousands",
+        desc: "This Pokemon's highest stat is raised by 1 stage if it attacks and knocks out another Pokemon. Stat stage changes are not considered. If multiple stats are tied, Attack, Defense, Special Attack, Special Defense, and Speed are prioritized in that order.",
+		shortDesc: "This Pokemon's highest stat is raised by 1 if it attacks and KOes another Pokemon.",
+    },
+    cleansingpurr: {
+        name: "Cleansing Purr",
+        shortDesc: "On switch-in, this Pokemon restores 1/4 of its ally's maximum HP, rounded down.",
+
+		heal: "  [POKEMON] was soothed by [SOURCE]'s purr!",
+    },
+    nightvision: {
+        name: "Night Vision",
+        desc: "This Pokemon can hit Ghost types with Normal- and Fighting-type moves. Prevents other Pokemon from lowering this Pokemon's accuracy stat stage. This Pokemon ignores a target's evasiveness stat stage.",
+		shortDesc: "Fighting, Normal moves hit Ghost. Accuracy can't be lowered, ignores evasiveness.",
+    },
+    
 };
