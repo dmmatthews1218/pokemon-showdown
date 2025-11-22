@@ -5824,9 +5824,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
     forgedinflames: {
         onTryHit(target, source, move) {
-			if (target !== source && move.type === 'Water') {
+			if (target !== source && move.type === 'Fire') {
 				if (!this.heal(target.baseMaxhp / 4)) {
-					this.add('-immune', target, '[from] ability: Water Absorb');
+					this.add('-immune', target, '[from] ability: Forged in Flames');
 				}
 				return null;
 			}
