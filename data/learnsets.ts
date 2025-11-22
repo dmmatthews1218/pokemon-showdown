@@ -103031,7 +103031,6 @@ crevantula: {
         screech: ["9L1"],
         shadowclaw: ["9L1"],
         sharpen: ["9L1"],
-        shellsmash: ["9L1"],
         skittersmack: ["9L1"],
         snarl: ["9L1"],
         snowscape: ["9L1"],
