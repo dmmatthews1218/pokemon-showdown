@@ -22618,7 +22618,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondaries: [
 			{
 				chance: 15,
-				status: 'par',
+				volatileStatus: 'confusion',
 			}, {
 				chance: 15,
 				volatileStatus: 'flinch',
