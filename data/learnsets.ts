@@ -104945,7 +104945,6 @@ raichurelaya: {
         revenge: ["9L1"],
         reversal: ["9L1"],
         rocksmash: ["9L1"],
-        spark: ["9L1"],
         strength: ["9L1"],
         suckerpunch: ["9L1"],
         morningsun: ["9L1"],
