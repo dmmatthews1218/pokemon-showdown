@@ -3344,22 +3344,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 136,
 		gen: 4,
 	},
-    tatsugiripearl: {
-		name: "Tatsugiri Pearl",
-		spritenum: 9001,
-		fling: {
-			basePower: 60,
-		},
-		onBasePowerPriority: 15,
-		onBasePower(basePower, user, target, move) {
-			if (user.baseSpecies.num === 9011 && (move.type === 'Water' || move.type === 'Dragon')) {
-				return this.chainModify([4915, 4096]);
-			}
-		},
-		itemUser: ["Giitchedgiri"],
-		num: 9001,
-		gen: 9,
-	},
 	luxuryball: {
 		name: "Luxury Ball",
 		spritenum: 266,
@@ -7712,4 +7696,58 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 8,
 		isNonstandard: "CAP",
 	},
+
+    // NCSU PKMN Items
+    tatsugiripearl: {
+		name: "Tatsugiri Pearl",
+		spritenum: 9001,
+		fling: {
+			basePower: 60,
+		},
+		onBasePowerPriority: 15,
+		onBasePower(basePower, user, target, move) {
+			if (user.baseSpecies.num === 9011 && (move.type === 'Water' || move.type === 'Dragon')) {
+				return this.chainModify([4915, 4096]);
+			}
+		},
+		itemUser: ["Giitchedgiri"],
+		num: 9001,
+		gen: 9,
+	},
+    crobite: {
+        name: "Crobite",
+		spritenum: 9002,
+		megaStone: "Crobite-Mega",
+		megaEvolves: "Crob",
+		itemUser: ["Crob"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 9002,
+    },
+    protecdeerite: {
+        name: "Protecdeerite",
+		spritenum: 9002,
+		megaStone: "Protecdeer-Mega",
+		megaEvolves: "Protecdeer",
+		itemUser: ["Protecdeer"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 9003,
+    },
+    lusakuanite: {
+        name: "Lusakuanite",
+		spritenum: 9004,
+		megaStone: "Lusakua-Mega",
+		megaEvolves: "Lusakua",
+		itemUser: ["Lusakua"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 9004,
+    }
 };

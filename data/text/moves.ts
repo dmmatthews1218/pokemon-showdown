@@ -7845,4 +7845,33 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		name: "Ice Slash",
 		shortDesc: "No additional effect.",
 	},
+    vampiricpeck: {
+        name: "Vampiric Peck",
+        desc: "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
+		shortDesc: "User recovers 50% of the damage dealt.",
+    },
+    angelstrike: {
+        name: "Angel Strike",
+        shortDesc: "Cannot be selected the turn after it's used.",
+    },
+    resourcefulcrafting: {
+        name: "Resourceful Crafting",
+        desc: "Raises a random stat by 2 stages as long as the stat is not already at stage 6. The user can choose to use this move on itself or an adjacent ally. Fails if no stat stage can be raised or if used on an ally with a substitute.",
+		shortDesc: "Raises a random stat of the user or an ally by 2.",
+    },
+    craftycounter: {
+        name: "Crafty Counter",
+        desc: "Deals damage to the last opposing Pokemon to hit the user with a physical or special attack this turn equal to 1.5 times the HP lost by the user from that attack, rounded down. If the user did not lose HP from that attack, this move deals 1 HP of damage instead. If that opposing Pokemon's position is no longer in use and there is another opposing Pokemon on the field, the damage is done to it instead. Only the last hit of a multi-hit attack is counted. Fails if the user was not hit by an opposing Pokemon's physical or special attack this turn.",
+		shortDesc: "If hit by an attack, returns 1.5x damage.",
+    },
+    improvise: {
+        name: "Improvise",
+        desc: "After attacking, this Pokémon copies the typing of the target Pokémon. This move's type depends on the user's primary type. If the user's primary type is typeless, this move's type is the user's secondary type if it has one, otherwise the added type from Forest's Curse or Trick-or-Treat. This move is typeless if the user's type is typeless alone.",
+		shortDesc: "Copies target's typing. Move type is user's 1st type.",
+    },
+    cheerspreader: {
+        name: "Cheer Spreader",
+        desc: "The user cures its ally's burn, poison, or paralysis, and gives them a +3 boost to a random stat. Fails if the target is not burned, poisoned, or paralyzed.",
+		shortDesc: "Cures ally's brn, psn, or prz; gives a random stat +3.",
+    }
 };

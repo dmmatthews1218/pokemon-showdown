@@ -6211,4 +6211,32 @@ bearwyrm: {
 hornbelly: {
     tier: "OU",
 },
+maelord: {
+    tier: "OU",
+},
+ahjoterra: {
+    tier: "OU",
+},
+kayohtee: {
+    tier: "OU",
+},
+protecdeer: {
+    tier: "OU",
+},
+falinksrelaya: {
+    tier: "OU",
+},
+milmandic: {
+    tier: "OU",
+},
+crobmega: {
+    tier: "OU",
+},
+protecdeermega: {
+    tier: "OU",
+},
+lusakuamega: {
+    tier: "OU",
+},
+
 };

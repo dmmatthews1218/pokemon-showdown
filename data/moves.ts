@@ -22126,7 +22126,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
     },
     crobhammer: {
         num: 9001,
-		accuracy: 90,
+		accuracy: 85,
 		basePower: 110,
 		category: "Physical",
 		name: "Crob-Hammer",
@@ -23050,6 +23050,157 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Fairy",
 		contestType: "Cute",
+    },
+    vampiricpeck: {
+        num: 9039,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Vampiric Peck",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, heal: 1, metronome: 1 },
+		drain: [1, 2],
+		secondary: null,
+		target: "normal",
+		type: "Flying",
+		contestType: "Clever",
+    },
+    angelstrike: {
+        num: 9040,
+		accuracy: 100,
+		basePower: 140,
+		category: "Special",
+		name: "Angel Strike",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1, cantusetwice: 1 },
+		secondary: null,
+		target: "normal",
+		type: "Ice",
+    },
+    resourcefulcrafting: {
+        num: 9041,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Resourceful Crafting",
+		pp: 30,
+		priority: 0,
+		flags: { metronome: 1 },
+		onHit(target) {
+			const stats: BoostID[] = [];
+			let stat: BoostID;
+			for (stat in target.boosts) {
+				if (target.boosts[stat] < 6) {
+					stats.push(stat);
+				}
+			}
+			if (stats.length) {
+				const randomStat = this.sample(stats);
+				const boost: SparseBoostsTable = {};
+				boost[randomStat] = 3;
+				this.boost(boost);
+			} else {
+				return false;
+			}
+		},
+		secondary: null,
+		target: "self",
+		type: "Normal",
+		zMove: { effect: 'crit2' },
+		contestType: "Tough",
+    },
+    craftycounter: {
+        num: 9042,
+		accuracy: 100,
+		basePower: 0,
+		damageCallback(pokemon) {
+			const lastDamagedBy = pokemon.getLastDamagedBy(true);
+			if (lastDamagedBy !== undefined) {
+				return (lastDamagedBy.damage * 1.5) || 1;
+			}
+			return 0;
+		},
+		category: "Physical",
+		name: "Crafty Counter",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1, failmefirst: 1 },
+		onTry(source) {
+			const lastDamagedBy = source.getLastDamagedBy(true);
+			if (!lastDamagedBy?.thisTurn) return false;
+		},
+		onModifyTarget(targetRelayVar, source, target, move) {
+			const lastDamagedBy = source.getLastDamagedBy(true);
+			if (lastDamagedBy) {
+				targetRelayVar.target = this.getAtSlot(lastDamagedBy.slot);
+			}
+		},
+		secondary: null,
+		target: "scripted",
+		type: "Bug",
+		contestType: "Cool",
+    },
+    improvise: {
+        num: 9043,
+		accuracy: 100,
+		basePower: 60,
+		category: "Physical",
+		name: "Improvise",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, dance: 1, metronome: 1 },
+		onModifyType(move, pokemon) {
+			const types = pokemon.getTypes();
+			let type = types[0];
+			if (type === 'Bird') type = '???';
+			if (type === '???' && types[1]) type = types[1];
+			move.type = type;
+		},
+        onHit(target, source, move) {
+            if (!target || !source) return;
+            const targetTypes = target.species.types;
+            source.setType(targetTypes);
+            this.add('-start', source, 'typechange', targetTypes.join('/'), '[from] move: Improvise');
+        },
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		contestType: "Beautiful",
+    },
+    cheerspreader: {
+        num: 9044,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Cheer spreader",
+		pp: 20,
+		priority: 0,
+		flags: { metronome: 1 },
+		onHit(target) {
+			target.cureStatus();
+			const stats: BoostID[] = [];
+			let stat: BoostID;
+			for (stat in target.boosts) {
+				if (target.boosts[stat] < 6) {
+					stats.push(stat);
+				}
+			}
+			if (stats.length) {
+				const randomStat = this.sample(stats);
+				const boost: SparseBoostsTable = {};
+				boost[randomStat] = 3;
+				this.boost(boost);
+			} else {
+				return false;
+			}
+		},
+		secondary: null,
+		target: "adjacentAlly",
+		type: "Normal",
+		zMove: { effect: 'heal' },
+		contestType: "Tough",
     },
 
     // PACK ATTACKS

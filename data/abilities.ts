@@ -5891,5 +5891,70 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0,
 		num: 9015,
     },
-
+    featherweight: {
+		onModifyWeight(weighthg) {
+			return this.trunc(weighthg / 2);
+		},
+        onDamage(damage, target, source, effect) {
+			if (effect.id === 'recoil') {
+				if (!this.activeMove) throw new Error("Battle.activeMove is null");
+				if (this.activeMove.id !== 'struggle') {
+                    this.boost({ spe: length }, source, source, this.dex.abilities.get('featherweight'));
+                }
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Featherweight",
+		rating: 1,
+		num: 9016,
+	},
+    panicattack: {
+        onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Psychic' && attacker.hp <= attacker.maxhp / 3) {
+				this.debug('Panic Attack boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Psychic' && attacker.hp <= attacker.maxhp / 3) {
+				this.debug('Panic Attack boost');
+				return this.chainModify(1.5);
+			}
+		},
+		flags: {},
+		name: "Panic Attack",
+		rating: 2,
+		num: 9017,
+    },
+    psychicrave: {
+        onBasePowerPriority: 7,
+        onModifyType(move, pokemon) {
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
+			if (move.type === 'Normal' && (!noModifyType.includes(move.id) || this.activeMove?.isMax) &&
+				!(move.isZ && move.category !== 'Status') && !(move.name === 'Tera Blast' && pokemon.terastallized)) {
+				move.type = 'Psychic';
+				move.typeChangerBoosted = this.effect;
+			}
+		},
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['sound']) {
+				this.debug('Psychic Rave boost');
+				return this.chainModify([5325, 4096]);
+			}
+		},
+		onSourceModifyDamage(damage, source, target, move) {
+			if (move.flags['sound']) {
+				this.debug('Psychic Rave weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Psychic Rave",
+		rating: 3.5,
+		num: 9018,
+    }
 };

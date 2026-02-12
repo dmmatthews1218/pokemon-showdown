@@ -2443,5 +2443,18 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
     tatsugiripearl: {
         name: "Tatsugiri Pearl",
         shortDesc: "If held by a Giitchedgiri, its Water- and Dragon-type attacks have 1.2x power.",
-    }
+    },
+    crobite: {
+        name: "Crobite",
+		shortDesc: "If held by a Crob, this item allows it to Mega Evolve in battle.",
+    },
+    protecdeerite: {
+        name: "Protecdeerite",
+		shortDesc: "If held by a Protecdeer, this item allows it to Mega Evolve in battle.",
+    },
+    lusakuanite: {
+        name: "Lusakuanite",
+		shortDesc: "If held by a Lusakua, this item allows it to Mega Evolve in battle.",
+    },
+    
 };

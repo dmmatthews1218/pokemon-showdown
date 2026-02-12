@@ -2359,4 +2359,19 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
         desc: "This Pokemon can hit Ghost types with Normal- and Fighting-type moves. Prevents other Pokemon from lowering this Pokemon's accuracy stat stage. This Pokemon ignores a target's evasiveness stat stage.",
 		shortDesc: "Fighting, Normal moves hit Ghost. Accuracy can't be lowered, ignores evasiveness.",
     },
+    featherweight: {
+        name: "Featherweight",
+        desc: "This Pokémon gains +1 speed upon taking recoil. This Pokemon's weight is halved, rounded down to a tenth of a kilogram. This effect is calculated after the effect of Autotomize, and before the effect of Float Stone. A Pokemon's weight will not drop below 0.1 kg.",
+		shortDesc: "This Pokemon's weight is halved. Gain +1 speed when taking recoil.",
+    },
+    panicattack: {
+        name: "Panic Attack",
+        desc: "When this Pokemon has 1/3 or less of its maximum HP, rounded down, its offensive stat is multiplied by 1.5 while using a Psychic-type attack.",
+		shortDesc: "At 1/3 or less of its max HP, this Pokemon's offensive stat is 1.5x with Psychic attacks.",
+    },
+    psychicrave: {
+        name: "Psychic Rave",
+        desc: "This Pokémon's Normal-Type moves turn Psychic-type. This Pokemon's sound-based moves have their power multiplied by 1.3. This Pokemon takes halved damage from sound-based moves.",
+		shortDesc: "User's normal moves become psy; Takes 1/2 damage from sound moves; Its own are 1.3x power.",
+    }
 };
