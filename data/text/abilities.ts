@@ -2372,6 +2372,6 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
     psychicrave: {
         name: "Psychic Rave",
         desc: "This Pokémon's Normal-Type moves turn Psychic-type. This Pokemon's sound-based moves have their power multiplied by 1.3. This Pokemon takes halved damage from sound-based moves.",
-		shortDesc: "User's normal moves become psy; Takes 1/2 damage from sound moves; Its own are 1.3x power.",
+		shortDesc: "User's Normal moves become Psy; Takes 1/2 damage from sound moves; Its own are 1.3x power.",
     }
 };

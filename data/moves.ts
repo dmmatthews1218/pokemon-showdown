@@ -23107,7 +23107,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "Bug",
 		zMove: { effect: 'crit2' },
 		contestType: "Tough",
     },

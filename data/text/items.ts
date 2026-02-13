@@ -2456,5 +2456,12 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
         name: "Lusakuanite",
 		shortDesc: "If held by a Lusakua, this item allows it to Mega Evolve in battle.",
     },
-    
+    loathidite: {
+        name: "Loathidite",
+		shortDesc: "If held by a Loathid, this item allows it to Mega Evolve in battle.",
+    },
+    kittunite: {
+        name: "Kittunite",
+        shortDesc: "If held by a Kittune, this item allows it to Mega Evolve in battle."
+    }
 };

@@ -7749,5 +7749,29 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return true;
 		},
 		num: 9004,
+    },
+    loathidite: {
+        name: "Loathidite",
+		spritenum: 9005,
+		megaStone: "Loathid-Mega",
+		megaEvolves: "Loathid",
+		itemUser: ["Loathid"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 9005,
+    },
+    kittunite: {
+        name: "Kittunite",
+		spritenum: 9006,
+		megaStone: "Kittune-Mega",
+		megaEvolves: "Kittune",
+		itemUser: ["Kittune"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 9006,
     }
 };

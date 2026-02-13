@@ -6238,5 +6238,10 @@ protecdeermega: {
 lusakuamega: {
     tier: "OU",
 },
-
+kittunemega: {
+    tier: "OU",
+},
+loathidmega: {
+    tier: "OU",
+},
 };
