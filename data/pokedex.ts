@@ -20105,7 +20105,7 @@ kittune: {
 },
 kittunemega: {
     num: 9019,
-    name: "Kittune",
+    name: "Kittune-Mega",
     types: ["Electric","Psychic"],
     genderRatio: { M: 0.5, F: 0.5 },
     baseStats: { hp: 90, atk: 40, def: 100, spa: 135, spd: 100, spe: 135 },
