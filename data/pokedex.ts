@@ -19889,7 +19889,7 @@ crob: {
     tags: [],
     eggGroups: ["Undiscovered"],
     otherFormes: ["Crob-Mega"],
-		formeOrder: ["Crob", "Crob-Mega"],
+	formeOrder: ["Crob", "Crob-Mega"],
 },
 crobmega: {
     num: 9004,
@@ -20102,6 +20102,8 @@ kittune: {
     color: "Yellow",
     tags: [],
     eggGroups: ["Field"],
+    otherFormes: ["Kittune-Mega"],
+    formeOrder: ["Kittune", "Kittune-Mega"]
 },
 kittunemega: {
     num: 9019,
@@ -20453,6 +20455,8 @@ lusakua: {
     color: "Blue",
     eggGroups: ["Water 2"],
     heightm: 0.7,
+    otherFormes: ["Lusakua-Mega"],
+    formeOrder: ["Lusakua", "Lusakua-Mega"]
 },
 lusakuamega: {
     num: 9043,
@@ -20492,6 +20496,8 @@ loathid: {
     color: "Red",
     eggGroups: ["Field"],
     heightm: 2.1,
+    otherFormes: ["Loathid-Mega"],
+    formeOrder: ["Loathid", "Loathid-Mega"]
 },
 loathidmega: {
     num: 9045,
@@ -20675,6 +20681,8 @@ protecdeer: {
     heightm: 1.9,
     weightkg: 120.7,
     eggGroups: ["Fairy"],
+    otherFormes: ["Protecdeer-Mega"],
+    formeOrder: ["Protecdeer", "Protecdeer-Mega"]
 },
 protecdeermega: {
     num: 9060,

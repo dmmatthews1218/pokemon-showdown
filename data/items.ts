@@ -7724,7 +7724,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-        isNonstandard: "Custom",
 		num: 9002,
     },
     protecdeerite: {
@@ -7737,7 +7736,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-        isNonstandard: "Custom",
 		num: 9003,
     },
     lusakuanite: {
@@ -7750,7 +7748,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-        isNonstandard: "Custom",
 		num: 9004,
     },
     loathidite: {
@@ -7763,7 +7760,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-        isNonstandard: "Custom",
 		num: 9005,
     },
     kittunite: {
@@ -7776,7 +7772,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-        isNonstandard: "Custom",
 		num: 9006,
     }
 };
