@@ -7714,64 +7714,64 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 9001,
 		gen: 9,
 	},
-    crobite: {
-        name: "Crobite",
-		spritenum: 9002,
-		megaStone: "Crobite-Mega",
-		megaEvolves: "Crob",
-		itemUser: ["Crob"],
-		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
-		},
-		num: 9002,
-    },
-    protecdeerite: {
-        name: "Protecdeerite",
-		spritenum: 9002,
-		megaStone: "Protecdeer-Mega",
-		megaEvolves: "Protecdeer",
-		itemUser: ["Protecdeer"],
-		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
-		},
-		num: 9003,
-    },
-    lusakuanite: {
-        name: "Lusakuanite",
-		spritenum: 9004,
-		megaStone: "Lusakua-Mega",
-		megaEvolves: "Lusakua",
-		itemUser: ["Lusakua"],
-		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
-		},
-		num: 9004,
-    },
-    loathidite: {
-        name: "Loathidite",
-		spritenum: 9005,
-		megaStone: "Loathid-Mega",
-		megaEvolves: "Loathid",
-		itemUser: ["Loathid"],
-		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
-		},
-		num: 9005,
-    },
-    kittunite: {
-        name: "Kittunite",
-		spritenum: 9006,
-		megaStone: "Kittune-Mega",
-		megaEvolves: "Kittune",
-		itemUser: ["Kittune"],
-		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
-		},
-		num: 9006,
-    }
+    // crobite: {
+    //     name: "Crobite",
+	// 	spritenum: 9002,
+	// 	megaStone: "Crobite-Mega",
+	// 	megaEvolves: "Crob",
+	// 	itemUser: ["Crob"],
+	// 	onTakeItem(item, source) {
+	// 		if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+	// 		return true;
+	// 	},
+	// 	num: 9002,
+    // },
+    // protecdeerite: {
+    //     name: "Protecdeerite",
+	// 	spritenum: 9002,
+	// 	megaStone: "Protecdeer-Mega",
+	// 	megaEvolves: "Protecdeer",
+	// 	itemUser: ["Protecdeer"],
+	// 	onTakeItem(item, source) {
+	// 		if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+	// 		return true;
+	// 	},
+	// 	num: 9003,
+    // },
+    // lusakuanite: {
+    //     name: "Lusakuanite",
+	// 	spritenum: 9004,
+	// 	megaStone: "Lusakua-Mega",
+	// 	megaEvolves: "Lusakua",
+	// 	itemUser: ["Lusakua"],
+	// 	onTakeItem(item, source) {
+	// 		if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+	// 		return true;
+	// 	},
+	// 	num: 9004,
+    // },
+    // loathidite: {
+    //     name: "Loathidite",
+	// 	spritenum: 9005,
+	// 	megaStone: "Loathid-Mega",
+	// 	megaEvolves: "Loathid",
+	// 	itemUser: ["Loathid"],
+	// 	onTakeItem(item, source) {
+	// 		if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+	// 		return true;
+	// 	},
+	// 	num: 9005,
+    // },
+    // kittunite: {
+    //     name: "Kittunite",
+	// 	spritenum: 9006,
+	// 	megaStone: "Kittune-Mega",
+	// 	megaEvolves: "Kittune",
+	// 	itemUser: ["Kittune"],
+	// 	onTakeItem(item, source) {
+	// 		if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+	// 		return true;
+	// 	},
+	// 	num: 9006,
+    // }
 };
