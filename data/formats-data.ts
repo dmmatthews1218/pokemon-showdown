@@ -6229,19 +6229,19 @@ falinksrelaya: {
 milmandic: {
     tier: "OU",
 },
-// crobmega: {
-//     tier: "OU",
-// },
-// protecdeermega: {
-//     tier: "OU",
-// },
-// lusakuamega: {
-//     tier: "OU",
-// },
-// kittunemega: {
-//     tier: "OU",
-// },
-// loathidmega: {
-//     tier: "OU",
-// },
+crobmega: {
+    tier: "OU",
+},
+protecdeermega: {
+    tier: "OU",
+},
+lusakuamega: {
+    tier: "OU",
+},
+kittunemega: {
+    tier: "OU",
+},
+loathidmega: {
+    tier: "OU",
+},
 };
