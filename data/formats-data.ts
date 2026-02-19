@@ -6231,17 +6231,22 @@ milmandic: {
 },
 crobmega: {
     tier: "OU",
+    isNonstandard: "Custom",
 },
 protecdeermega: {
     tier: "OU",
+    isNonstandard: "Custom",
 },
 lusakuamega: {
     tier: "OU",
+    isNonstandard: "Custom",
 },
 kittunemega: {
     tier: "OU",
+    isNonstandard: "Custom",
 },
 loathidmega: {
     tier: "OU",
+    isNonstandard: "Custom",
 },
 };

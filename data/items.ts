@@ -7725,6 +7725,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return true;
 		},
 		num: 9002,
+        isNonstandard: "Custom",
     },
     protecdeerite: {
         name: "Protecdeerite",
@@ -7737,6 +7738,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return true;
 		},
 		num: 9003,
+        isNonstandard: "Custom",
     },
     lusakuanite: {
         name: "Lusakuanite",
@@ -7749,6 +7751,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return true;
 		},
 		num: 9004,
+        isNonstandard: "Custom",
     },
     loathidite: {
         name: "Loathidite",
@@ -7761,6 +7764,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return true;
 		},
 		num: 9005,
+        isNonstandard: "Custom",
     },
     kittunite: {
         name: "Kittunite",
@@ -7773,5 +7777,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return true;
 		},
 		num: 9006,
+        isNonstandard: "Custom",
     }
 };
