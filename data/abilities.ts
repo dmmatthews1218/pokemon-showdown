@@ -5896,11 +5896,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			return this.trunc(weighthg / 2);
 		},
         onDamage(damage, target, source, effect) {
-			if (effect.id === 'recoil') {
-				if (!this.activeMove) throw new Error("Battle.activeMove is null");
-				if (this.activeMove.id !== 'struggle') {
-                    this.boost({ spe: length }, source, source, this.dex.abilities.get('featherweight'));
-                    return;
+			if (effect?.id === 'recoil') {
+				if (this.activeMove?.id !== 'struggle') {
+                    this.boost({ spe: length }, target);
                 }
 			}
 		},
