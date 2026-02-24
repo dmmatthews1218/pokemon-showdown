@@ -23125,7 +23125,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		category: "Physical",
 		name: "Crafty Counter",
 		pp: 10,
-		priority: 0,
+		priority: -5,
 		flags: { protect: 1, mirror: 1, metronome: 1, failmefirst: 1 },
 		onTry(source) {
 			const lastDamagedBy = source.getLastDamagedBy(true);
