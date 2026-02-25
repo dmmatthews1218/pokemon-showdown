@@ -103557,7 +103557,6 @@ hydraid: {
         dracometeor: ["9L1"],
         dragonbreath: ["9L1"],
         dragoncheer: ["9L1"],
-        dragonenergy: ["9L1"],
         dragonpulse: ["9L1"],
         earthpower: ["9L1"],
         encore: ["9L1"],
