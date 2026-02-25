@@ -7717,7 +7717,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
     crobite: {
         name: "Crobite",
 		spritenum: 9002,
-		megaStone: "Crobite-Mega",
+		megaStone: "Crob-Mega",
 		megaEvolves: "Crob",
 		itemUser: ["Crob"],
 		onTakeItem(item, source) {
