@@ -6226,7 +6226,7 @@ protecdeer: {
 falinksrelaya: {
     tier: "OU",
 },
-milmandic: {
+milamandic: {
     tier: "OU",
 },
 crobmega: {

@@ -22995,7 +22995,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			},
 		},
 		secondary: null,
-		target: "allAdjacentFoes",
+		target: "any",
 		type: "Fire",
     },
     tonguewhip: {
