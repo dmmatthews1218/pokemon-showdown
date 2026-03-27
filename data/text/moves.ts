@@ -7873,5 +7873,31 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
         name: "Cheer Spreader",
         desc: "The user cures its ally's burn, poison, or paralysis, and gives them a +3 boost to a random stat. Fails if the target is not burned, poisoned, or paralyzed.",
 		shortDesc: "Cures ally's brn, psn, or prz; gives a random stat +3.",
-    }
+    },
+    relayandance: {
+        name: "Relayan Dance",
+        desc: "Raises all of the user's stats by 1 stage.",
+		shortDesc: "Raises all of the user's stats by 1 stage.",
+    },
+    relayanroar: {
+        name: "Relayan Roar",
+        desc: "Lowers all of the target's stats by 1 stage.",
+		shortDesc: "Lowers all of the target's stats by 1 stage.",
+    },
+    crittercocoon: {
+        name: "Critter Cocoon",
+        desc: "Deals damage to the target equal to the target's maximum HP. Ignores accuracy and evasiveness modifiers. This attack's accuracy is equal to (user's level - target's level + 50)%, and fails if the target is at a higher level. Pokemon with the Sturdy Ability are immune.",
+		shortDesc: "OHKOs the target. Fails if user is a lower level.",
+    },
+    hatattack: {
+        name: "Hat Attack",
+        desc: "This move is always a critical hit unless the target is under the effect of Lucky Chant or has the Battle Armor or Shell Armor Abilities.",
+		shortDesc: "Always results in a critical hit.",
+    },
+    wurmplebeam: {
+        name: "Wurmple Beam",
+        desc: "This move is always supereffective.",
+        shortDesc: "This move is always supereffective."
+    },
+
 };

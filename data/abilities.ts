@@ -5956,5 +5956,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Psychic Rave",
 		rating: 3.5,
 		num: 9018,
+    },
+    powerofthecrittercoin: {
+        onSourceModifyDamage(damage, source, target, move) {
+			if (target.getMoveHitData(move).typeMod > 0) {
+				this.debug('Prism Armor neutralize');
+				return this.chainModify(0.75);
+			}
+		},
+        onStart(pokemon) {
+            this.boost({ atk: 1, def: 1, spa: 1, spd: 1, spe: 1 }, pokemon);
+        },
+		flags: {},
+		name: "Power of the Critter Coin",
+		rating: 3,
+		num: 9019,
     }
 };

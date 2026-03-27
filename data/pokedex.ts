@@ -5111,6 +5111,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Red",
 		evos: ["Silcoon", "Cascoon"],
 		eggGroups: ["Bug"],
+        otherFormes: ["Wurmple-Relaya"],
+		formeOrder: ["Wurmple", "Wurmple-Relaya"],
 	},
 	silcoon: {
 		num: 266,
@@ -20722,6 +20724,36 @@ milamandic: {
     heightm: 1.5,
     eggGroups: ["Fairy"],
 },
-
-
+diebuke: {
+	num: 9062,
+	name: "Diebuke",
+	types: ["Ghost", "Poison"],
+	genderRatio: {M: 0.875, F: 0.125},
+	baseStats: {hp: 130, atk: 100, def: 70, spa: 60, spd: 70, spe: 120},
+	abilities: {0: "Cursed Body", 1: "Defiant"},
+	weightkg: 3.6,
+	eggGroups: ["Field"],
+},
+ceevial: {
+	num: 9063,
+	name: "Ceevial",
+	types: ["Bug", "Ground"],
+	genderRatio: {M: 0.125, F: 0.875},
+	baseStats: {hp: 85, atk: 130, def: 120, spa: 60, spd: 60, spe: 60},
+	abilities: {0: "Sap Sipper"},
+	weightkg: 0.2,
+	eggGroups: ["Bug"],
+},
+wurmplerelaya: {
+	num: 9064,
+	name: "Wurmple-Relaya",
+	baseSpecies: "Wurmple",
+	forme: "Relaya",
+	types: ["Bug", "Dragon"],
+	genderRatio: {M: 0.5, F: 0.5},
+	baseStats: {hp: 80, atk: 150, def: 100, spa: 150, spd: 100, spe: 120},
+	abilities: {0: "Power of the Critter Coin"},
+	weightkg: 4.0,
+	eggGroups: ["Bug"],
+},
 };
