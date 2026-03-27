@@ -105986,6 +105986,7 @@ wurmplerelaya: {
         relayandance: ["9L1"],
         wurmplebeam: ["9L1"],
         hatattack: ["9L1"],
+        crittercocoon: ["9L1"],
     }
 },
 };
