@@ -5971,5 +5971,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Power of the Critter Coin",
 		rating: 3,
 		num: 9019,
-    }
+    },
+    royalcoat: {
+		onModifySecondaries(secondaries) {
+			this.debug('Royal Coat prevent secondary');
+			return secondaries.filter(effect => !!effect.self);
+		},
+		flags: { breakable: 1 },
+		name: "Royal Coat",
+		rating: 2,
+		num: 9020,
+	},
+    
 };

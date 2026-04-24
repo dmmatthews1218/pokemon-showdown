@@ -6251,18 +6251,27 @@ loathidmega: {
 },
 diebuke: {
     tier: "OU",
-    isNonstandard: "Custom",
 },
 ceevial: {
     tier: "OU",
-    isNonstandard: "Custom",
 },
 // mimikyurelaya: {
 //     tier: "OU",
-//     isNonstandard: "Custom",
 // },
 wurmplerelaya: {
     tier: "AG",
-    isNonstandard: "Custom",
-}
+},
+calvampa: {
+    tier: "OU",
+},
+miltankrelaya: {
+    tier: "OU",
+},
+toonisquir: {
+    tier: "OU",
+},
+sparkat: {
+    tier: "OU",
+},
+
 };

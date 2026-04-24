@@ -7899,5 +7899,26 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
         desc: "This move is always supereffective.",
         shortDesc: "This move is always supereffective."
     },
+    slushdrink: {
+        name: "Slush Drink",
+		desc: "If the target is an ally, this move restores 1/2 of its maximum HP, rounded down, instead of dealing damage. This move have a 10% chance to freeze when used on an enemy.",
+		shortDesc: "If target is an ally, heals 50%. 10% Freeze on foe.",
+    },
+    brainfreeze: {
+        name: "Brain Freeze",
+        desc: "The target is unaffected by this move unless it is frozen. If the user has not fainted, the target thaws and becomes burned. Deals damage to the target based on its Special Defense instead of Defense.",
+        shortDesc: "Frozen target only. Thaws & Burns. Damages Sp. Def",
+    },
+    riffraff: {
+        name: "Riff Raff",
+        desc: "Has a 100% chance to paralyze and confusion the target(s).",
+        shortDesc: "100% hance to Parlayze and Confuse Foe(s)."
+    },
+    boomingshock: {
+        name: "Booming Shock",
+        desc: "This attack charges on the first turn and executes on the second. Raises the user's Special Defense by 1 stage on the first turn. If the user is holding a Power Herb, the move completes in one turn.",
+		shortDesc: "Raises user's Sp. Def by 1 on turn 1. Hits turn 2.",
 
+		prepare: "[POKEMON] is charging up!",
+    },
 };

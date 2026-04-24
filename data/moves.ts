@@ -23278,7 +23278,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 	},
     wurmplebeam: {
-        num: 573,
+        num: 9049,
 		accuracy: 100,
 		basePower: 60,
 		category: "Special",
@@ -23293,7 +23293,116 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Beautiful",
     },
-
+    slushdrink: {
+        num: 9050,
+		accuracy: 100,
+		basePower: 60,
+		category: "Physical",
+		name: "Slush Drink",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, allyanim: 1, metronome: 1, contact: 1, bullet: 1 },
+		onTryHit(target, source, move) {
+			if (source.isAlly(target)) {
+				move.basePower = 0;
+				move.infiltrates = true;
+                move.secondary = null;
+			}
+		},
+		onTryMove(source, target, move) {
+			if (source.isAlly(target) && source.volatiles['healblock']) {
+				this.attrLastMove('[still]');
+				this.add('cant', source, 'move: Heal Block', move);
+				return false;
+			}
+		},
+		onHit(target, source, move) {
+			if (source.isAlly(target)) {
+				if (!this.heal(Math.floor(target.baseMaxhp * 0.5))) {
+					return this.NOT_FAIL;
+				}
+			}
+		},
+		secondary: {
+			chance: 10,
+			status: 'frz',
+		},
+		target: "normal",
+		type: "Ice",
+		contestType: "Cute",
+    },
+    brainfreeze: {
+        num: 9051,
+		accuracy: 100,
+		basePower: 140,
+		category: "Physical",
+        overrideDefensiveStat: 'spd',
+		name: "Brain Freeze",
+		pp: 5,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, heal: 1, metronome: 1 },
+		drain: [1, 2],
+		onTryImmunity(target) {
+			return target.status === 'frz';
+		},
+		onHit(target) {
+			if (target.status === 'frz') target.cureStatus();
+		},
+        secondary: {
+			chance: 100,
+			status: 'brn',
+		},
+		target: "normal",
+		type: "Ice",
+		contestType: "Clever",
+    },
+    riffraff: {
+        num: 9052,
+		accuracy: 80,
+		basePower: 20,
+		category: "Special",
+		name: "Riff Raff",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1, sound: 1 },
+		secondaries: [
+			{
+				chance: 100,
+				status: 'par',
+			}, {
+				chance: 100,
+				volatileStatus: 'confusion',
+			},
+		],
+		target: "normal",
+		type: "Electric",
+		contestType: "Cute",
+    },
+    boomingshock: {
+        num: 9053,
+		accuracy: 100,
+		basePower: 150,
+		category: "Special",
+		name: "Booming Shock",
+		pp: 10,
+		priority: 0,
+		flags: { sound: 1, charge: 1, protect: 1, mirror: 1, nosleeptalk: 1, failinstruct: 1 },
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			this.boost({ spd: 1 }, attacker, attacker, move);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		target: "allAdjacentFoes",
+		type: "Electric",
+		contestType: "Beautiful",
+    },
 
     // PACK ATTACKS
     strengthofthewolf: {
